@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, TextInput, Image } from 'react-native'
+import { View, SafeAreaView, Keyboard, TouchableWithoutFeedback } from 'react-native'
 import React, { useLayoutEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 
@@ -6,14 +6,25 @@ import Header from '../components/home/Header'
 import SearchBar from '../components/home/SearchBar'
 
 import styles from '../styles/homescreen'
+import Body from '../components/home/Body'
+import { ScrollView } from 'react-native-gesture-handler'
+
+const DismissKeyboard = ({ children }) => (
+  <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}> 
+    {children}
+  </TouchableWithoutFeedback>
+);
+
 
 const HomeScreen = () => {
   const navigation = useNavigation();
 
   const [userData, setUserData] = useState({
-    userName: 'User Name',
-    location: 'Current Location',
+    userName: 'anytime.username',
+    location: 'San Jose • CA',
   })
+
+  const [categories, setCategories] = useState([1, 2, 3])
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -22,15 +33,23 @@ const HomeScreen = () => {
     
   })
   return (
-    <View>
+    <View className='bg-gray-100'>
       <SafeAreaView className={styles.safeAreaView}>
+        <DismissKeyboard>
+          <View>
+            {/* Header */}
+            <Header userData={userData} />
+            
+            {/* SearchBar */}
+            <SearchBar />
+          </View>
+        </DismissKeyboard>
 
-        {/* Header */}
-        <Header userData={userData} />
-        
-        {/* SearchBar */}
-        <SearchBar />
-        
+        {/* Body */}
+        <ScrollView>
+          <Body categories={categories} />
+        </ScrollView>
+
       </SafeAreaView>
     </View>
   )

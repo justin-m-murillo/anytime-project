@@ -1,5 +1,7 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+
+import { MapPinIcon } from 'react-native-heroicons/outline'
 
 import styles from '../../styles/header'
 
@@ -14,9 +16,11 @@ const Header = ({
         }}
         className={styles.profileImage}
       />
-      <View>
+      <View className='w-full'>
         <Text className={styles.userName}>{userName}</Text>
-        <Text className={styles.location}>{location}</Text>
+        <TouchableOpacity>
+          <Text className={styles.location}>{location}</Text>
+        </TouchableOpacity>
       </View>
     </View>
   )
