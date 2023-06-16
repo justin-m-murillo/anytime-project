@@ -47,12 +47,17 @@ const HomeScreen = () => {
         </DismissKeyboard>
 
         {/* Body */}
-        <View className='bg-gray-100'>
-          <ScrollView>
-            <Body features={features} />
-          </ScrollView>
-        </View>
         
+        
+          <View className='bg-gray-100'>
+            <ScrollView>
+              <View style={{ paddingBottom: 320 }}>
+                <Body features={features} />
+              </View>
+            </ScrollView>
+          </View>
+        
+
       </SafeAreaView>
     </View>
   )
