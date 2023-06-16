@@ -12,7 +12,7 @@ const FeaturedRow = () => {
   return (
     <View className={styles.container}>
       <View className={styles.category}>
-        <Text className={styles.title}>Category</Text>
+        <Text className={styles.title}>Feature</Text>
         <Text className={styles.short_desc}>short description</Text>
       </View>
       <FlatList
