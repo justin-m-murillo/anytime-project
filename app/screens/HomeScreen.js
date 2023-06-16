@@ -6,7 +6,7 @@ import Header from '../components/home/Header'
 import SearchBar from '../components/home/SearchBar'
 
 import styles from '../styles/homescreen'
-import Body from '../components/home/Body'
+import Body from '../components/home/body/Body'
 import { ScrollView } from 'react-native-gesture-handler'
 
 const DismissKeyboard = ({ children }) => (
@@ -47,16 +47,13 @@ const HomeScreen = () => {
         </DismissKeyboard>
 
         {/* Body */}
-        
-        
-          <View className='bg-gray-100'>
-            <ScrollView>
-              <View style={{ paddingBottom: 320 }}>
-                <Body features={features} />
-              </View>
-            </ScrollView>
-          </View>
-        
+        <View className='bg-gray-100'>
+          <ScrollView>
+            <View style={{ paddingBottom: 320 }}>
+              <Body features={features} />
+            </View>
+          </ScrollView>
+        </View>
 
       </SafeAreaView>
     </View>

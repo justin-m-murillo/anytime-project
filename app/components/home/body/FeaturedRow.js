@@ -1,9 +1,9 @@
 import { View, Text } from 'react-native'
 import React, { useState, useEffect } from 'react'
 
-import styles from '../../styles/categoryrow'
+import styles from '../../../styles/featuredrow'
 
-import BusinessCard from '../business/BusinessCard'
+import BusinessCard from '../../business/BusinessCard'
 import { FlatList } from 'react-native-gesture-handler'
 
 const FeaturedRow = () => {

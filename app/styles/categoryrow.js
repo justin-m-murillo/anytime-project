@@ -1,9 +1,8 @@
 
 const styles = {
-  container: 'pb-4',
-  category: 'mb-4',
-  title: 'font-bold text-2xl mx-2',
-  short_desc: 'text-gray-500 mx-2',
+  container: 'mx-2 my-2',
+  categoryWrapper: 'm-1 p-2 bg-red-600 border-0 rounded-lg',
+  title: 'mt-1 text-white font-semibold text-xs',
 }
 
 export default styles;
