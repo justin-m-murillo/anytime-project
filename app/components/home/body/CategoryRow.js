@@ -5,22 +5,21 @@ import styles from '../../../styles/categoryrow'
 import Category from './Category'
 import FastFood from '../../../assets/fastfood.svg'
 
-const ICON_WIDTH = 40
-const ICON_HEIGHT = 40
+const ICON_SIZE = 48
 
 const CategoryRow = () => {
   return (
     <View className={styles.container}>
-      <ScrollView
+      <View className={styles.listWrapper}
         horizontal
         showsHorizontalScrollIndicator={false}
       >
-        <Category Icon={ <FastFood width={ICON_WIDTH} height={ICON_HEIGHT} /> } title={'Fast Food'} />
-        <Category Icon={ <FastFood width={ICON_WIDTH} height={ICON_HEIGHT} /> } title={'Fast Food'} />
-        <Category Icon={ <FastFood width={ICON_WIDTH} height={ICON_HEIGHT} /> } title={'Fast Food'} />
-        <Category Icon={ <FastFood width={ICON_WIDTH} height={ICON_HEIGHT} /> } title={'Fast Food'} />
-        <Category Icon={ <FastFood width={ICON_WIDTH} height={ICON_HEIGHT} /> } title={'Fast Food'} />
-      </ScrollView>
+        <Category Icon={ <FastFood width={ICON_SIZE} height={ICON_SIZE} /> } title={'Fast Food'} />
+        <Category Icon={ <FastFood width={ICON_SIZE} height={ICON_SIZE} /> } title={'Fast Food'} />
+        <Category Icon={ <FastFood width={ICON_SIZE} height={ICON_SIZE} /> } title={'Fast Food'} />
+        <Category Icon={ <FastFood width={ICON_SIZE} height={ICON_SIZE} /> } title={'Fast Food'} />
+        <Category Icon={ <FastFood width={ICON_SIZE} height={ICON_SIZE} /> } title={'Fast Food'} />
+      </View>
     </View>
   )
 }
