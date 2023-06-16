@@ -2,8 +2,8 @@ import { View, SafeAreaView, Keyboard, TouchableWithoutFeedback } from 'react-na
 import React, { useLayoutEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 
-import Header from '../components/home/Header'
-import SearchBar from '../components/home/SearchBar'
+import Header from '../components/home/header/Header'
+import SearchBar from '../components/home/header/SearchBar'
 
 import styles from '../styles/homescreen'
 import Body from '../components/home/body/Body'

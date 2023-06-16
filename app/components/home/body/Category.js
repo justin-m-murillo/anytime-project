@@ -5,12 +5,13 @@ import styles from '../../../styles/categoryrow'
 
 const Category = ({ Icon, title }) => {
   return (
-    <View>
-      <TouchableOpacity className={styles.categoryWrapper}>
+      <TouchableOpacity 
+        style={styles.categoryWrapperRN}
+        className={styles.categoryWrapper}
+      >
         <View className={styles.icon}>{ Icon }</View>
         <Text className={styles.title}>{ title }</Text>
       </TouchableOpacity>
-    </View>
   )
 }
 

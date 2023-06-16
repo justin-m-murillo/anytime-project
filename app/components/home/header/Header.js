@@ -3,7 +3,7 @@ import React from 'react'
 
 import { MapPinIcon } from 'react-native-heroicons/outline'
 
-import styles from '../../styles/header'
+import styles from '../../../styles/header'
 
 const Header = ({
   userData: { userName, location } 

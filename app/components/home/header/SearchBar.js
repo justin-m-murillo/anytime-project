@@ -5,7 +5,7 @@ import {
   AdjustmentsVerticalIcon,
 } from 'react-native-heroicons/outline'
 
-import styles from '../../styles/searchbar'
+import styles from '../../../styles/searchbar'
 
 const SearchBar = () => {
   return (
