@@ -3,13 +3,13 @@ import React from 'react'
 
 import styles from '../../styles/body'
 
-import CategoryRow from './CategoryRow'
+import FeaturedRow from './FeaturedRow'
 
-const Body = ({ categories }) => {
+const Body = ({ features }) => {
   return (
     <View className={styles.container}>
-      {categories?.map(category => (
-        <CategoryRow key={category} />
+      {features?.map(feature => (
+        <FeaturedRow key={feature} />
       ))}
     </View>
   )

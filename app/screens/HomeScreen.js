@@ -24,7 +24,7 @@ const HomeScreen = () => {
     location: 'San Jose • CA',
   })
 
-  const [categories, setCategories] = useState([1, 2, 3])
+  const [features, setFeatures] = useState([1, 2, 3])
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -33,10 +33,11 @@ const HomeScreen = () => {
     
   })
   return (
-    <View className='bg-gray-100'>
+    <View>
       <SafeAreaView className={styles.safeAreaView}>
         <DismissKeyboard>
           <View>
+
             {/* Header */}
             <Header userData={userData} />
             
@@ -46,10 +47,12 @@ const HomeScreen = () => {
         </DismissKeyboard>
 
         {/* Body */}
-        <ScrollView>
-          <Body categories={categories} />
-        </ScrollView>
-
+        <View className='bg-gray-100'>
+          <ScrollView>
+            <Body features={features} />
+          </ScrollView>
+        </View>
+        
       </SafeAreaView>
     </View>
   )

@@ -6,7 +6,7 @@ import styles from '../../styles/categoryrow'
 import BusinessCard from '../business/BusinessCard'
 import { FlatList } from 'react-native-gesture-handler'
 
-const CategoryRow = () => {
+const FeaturedRow = () => {
   const [items, setItems] = useState([1,2,3,4])
 
   return (
@@ -17,7 +17,7 @@ const CategoryRow = () => {
       </View>
       <FlatList
         data={items}
-        renderItem={({item}) => <BusinessCard key={item.key} imgUrl={`https://picsum.photos/seed/${Math.random}/500`}/>}
+        renderItem={({item}) => <BusinessCard key={item.key} imgUrl={`https://picsum.photos/seed/${Math.random()}/500`}/>}
         horizontal
         showsHorizontalScrollIndicator={false}
       />
@@ -25,4 +25,4 @@ const CategoryRow = () => {
   )
 }
 
-export default CategoryRow
+export default FeaturedRow

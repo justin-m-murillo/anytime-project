@@ -12,7 +12,9 @@ const BusinessCard = ({ imgUrl }) => {
         }}
         className={styles.image}
       />
-      <Text className={styles.businessName}>Business Name</Text>
+      <View className={styles.businessNameContainer}>
+        <Text className={styles.businessName}>Business Name</Text>
+      </View>  
     </TouchableOpacity>
   )
 }
