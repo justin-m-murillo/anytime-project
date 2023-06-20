@@ -1,13 +1,16 @@
-import { View, SafeAreaView, Keyboard, TouchableWithoutFeedback } from 'react-native'
+import { 
+  View, 
+  SafeAreaView,
+  ScrollView, 
+  Keyboard, 
+  TouchableWithoutFeedback } from 'react-native'
 import React, { useLayoutEffect, useState } from 'react'
-import { useNavigation } from '@react-navigation/native'
 
 import Header from '../components/home/header/Header'
 import SearchBar from '../components/home/header/SearchBar'
 
 import styles from '../styles/homescreen'
 import Body from '../components/home/body/Body'
-import { ScrollView } from 'react-native-gesture-handler'
 
 const DismissKeyboard = ({ children }) => (
   <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}> 
@@ -16,8 +19,7 @@ const DismissKeyboard = ({ children }) => (
 );
 
 
-const HomeScreen = () => {
-  const navigation = useNavigation();
+const HomeScreen = ({ navigation }) => {
 
   const [userData, setUserData] = useState({
     userName: 'anytime.username',
@@ -50,7 +52,9 @@ const HomeScreen = () => {
         <View className='bg-gray-100'>
           <ScrollView>
             <View style={{ paddingBottom: 320 }}>
-              <Body features={features} />
+              <Body 
+                features={features}
+              />
             </View>
           </ScrollView>
         </View>

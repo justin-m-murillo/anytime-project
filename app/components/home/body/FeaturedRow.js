@@ -1,24 +1,29 @@
-import { View, Text } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 import React, { useState, useEffect } from 'react'
 
+import mainStyles from '../../../styles/mainstylesheet'
 import styles from '../../../styles/featuredrow'
 
-import BusinessCard from '../../business/BusinessCard'
-import { FlatList } from 'react-native-gesture-handler'
+import FeaturedItem from './FeaturedItem'
 
-const FeaturedRow = ({ title, description }) => {
-  const [items, setItems] = useState([1,2,3,4, 5])
+const FeaturedRow = ({ title, description, items }) => {
 
   return (
     <View className={styles.container}>
-      <View className={styles.category}>
-        <Text className={styles.title}>{title}</Text>
-        <Text className={styles.shortDesc}>{description}</Text>
+      <View>
+        <Text className={mainStyles.title}>{title}</Text>
+        <Text className={mainStyles.shortDesc}>{description}</Text>
       </View>
       <FlatList
         className={styles.featuredList}
         data={items}
-        renderItem={({item}) => <BusinessCard key={item.key} imgUrl={`https://picsum.photos/seed/${Math.random()}/500`}/>}
+        renderItem={({item}) => 
+          <FeaturedItem 
+            key={item.id}
+            imgUrl={`https://picsum.photos/seed/${Math.random()}/500`}
+            businessName={item.businessName}
+            distance={item.distance}
+          />}
         horizontal
         showsHorizontalScrollIndicator={false}
       />

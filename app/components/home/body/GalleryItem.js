@@ -1,5 +1,6 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
 
 import styles from '../../../styles/galleryitem'
 
@@ -19,8 +20,7 @@ const GalleryItem = ({ item, imgUrl }) => {
         </View>
         <View>
           <Text className={styles.dealInfo}>
-            25% off all beer on tap.{'\n'}
-            Order a burger and get appetizers half-off!
+            25% off all beer on tap. Order a burger and get appetizers half-off!
           </Text>
         </View>
       </View>
