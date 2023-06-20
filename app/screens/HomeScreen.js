@@ -3,14 +3,15 @@ import {
   SafeAreaView,
   ScrollView, 
   Keyboard, 
-  TouchableWithoutFeedback } from 'react-native'
-import React, { useLayoutEffect, useState } from 'react'
+  TouchableWithoutFeedback 
+} from 'react-native';
+import React, { useLayoutEffect, useState, } from 'react';
 
-import Header from '../components/home/header/Header'
-import SearchBar from '../components/home/header/SearchBar'
+import Header from '../components/home/header/Header';
+import SearchBar from '../components/home/header/SearchBar';
 
-import styles from '../styles/homescreen'
-import Body from '../components/home/body/Body'
+import styles from '../styles/homescreen';
+import Body from '../components/home/body/Body';
 
 const DismissKeyboard = ({ children }) => (
   <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}> 
@@ -18,20 +19,19 @@ const DismissKeyboard = ({ children }) => (
   </TouchableWithoutFeedback>
 );
 
-
 const HomeScreen = ({ navigation }) => {
 
   const [userData, setUserData] = useState({
     userName: 'anytime.username',
     location: 'San Jose • CA',
-  })
+  });
 
-  const [features, setFeatures] = useState([1, 2, 3])
+  const [features, setFeatures] = useState([1, 2, 3]);
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
-    })
+    });
     
   })
   return (
@@ -39,7 +39,6 @@ const HomeScreen = ({ navigation }) => {
       <SafeAreaView className={styles.safeAreaView}>
         <DismissKeyboard>
           <View>
-
             {/* Header */}
             <Header userData={userData} />
             
@@ -64,4 +63,4 @@ const HomeScreen = ({ navigation }) => {
   )
 }
 
-export default HomeScreen
+export default HomeScreen;

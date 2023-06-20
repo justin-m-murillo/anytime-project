@@ -1,20 +1,20 @@
-import { View, Text, FlatList } from 'react-native'
-import React from 'react'
+import { View, Text, FlatList } from 'react-native';
+import React from 'react';
 
-import GalleryColumn from './GalleryColumn'
+import GalleryColumn from './GalleryColumn';
 
-import styles from '../../../styles/gallery'
-import featuredStyles from '../../../styles/featuredrow'
+import styles from '../../../styles/gallery';
+import mainStyles from '../../../styles/mainstylesheet';
 
 const Gallery = ({ title, description }) => {
-  const parentList = [1, 2, 3, 4,]
+  const parentList = [1, 2, 3, 4,];
 
   return (
     <View className={styles.container}>
-      <Text className={featuredStyles.title}>Deals starting soon!</Text>
-      <Text className={featuredStyles.shortDesc}>Don't miss out on a great time</Text>
+      <Text className={mainStyles.title}>Deals starting soon!</Text>
+      <Text className={mainStyles.shortDesc}>Don't miss out on a great time</Text>
       <FlatList
-        className={featuredStyles.featuredList}
+        className={mainStyles.featuredList}
         data={parentList}
         renderItem={({item}) => <GalleryColumn item={item} /> }
         horizontal
