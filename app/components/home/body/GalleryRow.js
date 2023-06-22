@@ -16,7 +16,7 @@ const GalleryRow = ({ title, description }) => {
       <FlatList
         className={mainStyles.featuredList}
         data={parentList}
-        renderItem={({item}) => <GalleryColumn item={item} /> }
+        renderItem={({data}) => <GalleryColumn data={data} /> }
         horizontal
         showsHorizontalScrollIndicator={false}
       />
