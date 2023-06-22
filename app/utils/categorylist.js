@@ -1,13 +1,13 @@
-import FastFood from '../assets/fastfood.svg'
-import Japanese from '../assets/japanese.svg'
-import Mexican from '../assets/mexican.svg'
-import Chinese from '../assets/chinese.svg'
-import Pizza from '../assets/pizza.svg'
-import Chicken from '../assets/fried-chicken.svg'
-import Bars from '../assets/bars.svg'
-import Dessert from '../assets/dessert.svg'
-import Bowling from '../assets/bowling.svg'
-import Steak from '../assets/steak.svg'
+import FastFood from '../assets/fastfood.svg';
+import Japanese from '../assets/japanese.svg';
+import Mexican from '../assets/mexican.svg';
+import Chinese from '../assets/chinese.svg';
+import Pizza from '../assets/pizza.svg';
+import Chicken from '../assets/fried-chicken.svg';
+import Bars from '../assets/bars.svg';
+import Dessert from '../assets/dessert.svg';
+import Bowling from '../assets/bowling.svg';
+import Steak from '../assets/steak.svg';
 
 const ICON_SIZE = 48
 

@@ -1,27 +1,29 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from 'react-native';
+import React from 'react';
 
-import styles from '../../../styles/gallerycolumn'
+import styles from '../../../styles/gallerycolumn';
 
-import GalleryItem from './GalleryItem'
+import GalleryItem from './GalleryItem';
+
+import ImageGenerator from '../../../utils/sampleImgGenerator';
 
 const GalleryColumn = ({ data }) => {
   const temp = [
     {
       key: 1,
-      imgUrl: `https://picsum.photos/seed/${Math.random()}/720`,
+      imgUrl: ImageGenerator(720),
       businessName: 'Element1',
       distance: 2.5,
     }, 
     {
       key: 2,
-      imgUrl: `https://picsum.photos/seed/${Math.random()}/720`,
+      imgUrl: ImageGenerator(720),
       businessName: 'Element2',
       distance: 2.5,
     },
     {
       key: 3,
-      imgUrl: `https://picsum.photos/seed/${Math.random()}/720`,
+      imgUrl: ImageGenerator(720),
       businessName: 'Element3',
       distance: 2.5,
     },

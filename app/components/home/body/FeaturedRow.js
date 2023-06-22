@@ -6,6 +6,8 @@ import styles from '../../../styles/featuredrow'
 
 import FeaturedItem from './FeaturedItem'
 
+import ImageGenerator from '../../../utils/sampleImgGenerator';
+
 const FeaturedRow = ({ title, description, items }) => {
 
   return (
@@ -20,7 +22,7 @@ const FeaturedRow = ({ title, description, items }) => {
         renderItem={({item}) => 
           <FeaturedItem 
             key={item.id}
-            imgUrl={`https://picsum.photos/seed/${Math.random()}/720`}
+            imgUrl={ImageGenerator(720)}
             businessName={item.businessName}
             distance={item.distance}
           />}

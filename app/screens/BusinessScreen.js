@@ -1,4 +1,4 @@
-import { View, SafeAreaView } from 'react-native';
+import { View } from 'react-native';
 import React, { useLayoutEffect } from 'react';
 
 import { StatusBar } from 'expo-status-bar';
