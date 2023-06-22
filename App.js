@@ -14,7 +14,6 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <StatusBar style="auto" />
       <Stack.Navigator initialRouteName='Home' >
             <Stack.Screen 
               name='Home' 

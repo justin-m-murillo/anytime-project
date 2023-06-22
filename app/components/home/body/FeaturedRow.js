@@ -20,7 +20,7 @@ const FeaturedRow = ({ title, description, items }) => {
         renderItem={({item}) => 
           <FeaturedItem 
             key={item.id}
-            imgUrl={`https://picsum.photos/seed/${Math.random()}/500`}
+            imgUrl={`https://picsum.photos/seed/${Math.random()}/720`}
             businessName={item.businessName}
             distance={item.distance}
           />}

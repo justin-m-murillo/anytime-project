@@ -1,8 +1,8 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native'
-import React from 'react'
-import { useNavigation } from '@react-navigation/native'
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 
-import styles from '../../../styles/featureditem'
+import styles from '../../../styles/featureditem';
 
 const FeaturedItem = ({ 
     imgUrl, 

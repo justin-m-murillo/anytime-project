@@ -9,19 +9,19 @@ const GalleryColumn = ({ data }) => {
   const temp = [
     {
       key: 1,
-      imgUrl: `https://picsum.photos/seed/${Math.random()}/500`,
+      imgUrl: `https://picsum.photos/seed/${Math.random()}/720`,
       businessName: 'Element1',
       distance: 2.5,
     }, 
     {
       key: 2,
-      imgUrl: `https://picsum.photos/seed/${Math.random()}/500`,
+      imgUrl: `https://picsum.photos/seed/${Math.random()}/720`,
       businessName: 'Element2',
       distance: 2.5,
     },
     {
       key: 3,
-      imgUrl: `https://picsum.photos/seed/${Math.random()}/500`,
+      imgUrl: `https://picsum.photos/seed/${Math.random()}/720`,
       businessName: 'Element3',
       distance: 2.5,
     },

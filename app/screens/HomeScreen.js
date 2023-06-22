@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import React, { useLayoutEffect, useState, } from 'react';
 
+import { StatusBar } from 'expo-status-bar';
 import Header from '../components/home/header/Header';
 import SearchBar from '../components/home/header/SearchBar';
 
@@ -32,10 +33,11 @@ const HomeScreen = ({ navigation }) => {
     navigation.setOptions({
       headerShown: false,
     });
-    
-  })
+  });
+
   return (
     <View>
+      <StatusBar style="auto" />
       <SafeAreaView className={styles.safeAreaView}>
         <DismissKeyboard>
           <View>
