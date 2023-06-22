@@ -23,7 +23,7 @@ const BusinessProfile = ({ data }) => {
           showsHorizontalScrollIndicator={false}
           pagingEnabled={true}
         />
-        <View className='px-1 absolute left-0 bottom-0'>
+        <View className='px-1 absolute left-3 bottom-3'>
           <Text className='text-3xl font-bold text-white '>{businessName}</Text>
         </View>
       </View>
