@@ -9,8 +9,8 @@ import GeoLocationScreen from '../tabs/GeoLocationTab';
 const BusinessTabsView = () => {
   const [index, setIndex] = useState(0);
   const [routes] = useState([
-    { key: 'first', title: 'Menu' },
-    { key: 'second', title: 'Location' },
+    { key: 'first', index: 0, title: 'Menu' },
+    { key: 'second', index: 1, title: 'Location' },
   ]);
 
   const width = useWindowDimensions().width;
@@ -29,7 +29,7 @@ const BusinessTabsView = () => {
       );
     } else {
       return (
-        <Text className='my-1 text-gray-400'>
+        <Text className='my-1 text-gray-700'>
           {route.title}
         </Text>
       );
@@ -45,6 +45,8 @@ const BusinessTabsView = () => {
     );
   }
 
+
+
   return (
     <View style={{ height: '100%' }}>
       <TabView 
@@ -52,10 +54,16 @@ const BusinessTabsView = () => {
         renderTabBar={props => (
           <TabBar 
             {...props}
-            indicatorStyle={{ backgroundColor: '#ff5b1f' }}
-            style={{ backgroundColor: 'white' }}
+            indicatorStyle={{ 
+              backgroundColor: '#2FAFDA', 
+              height: '100%',
+            }}
+            indicatorContainerStyle={{
+              width: width,
+              backgroundColor: '#63c3e3',
+            }}
             renderTabBarItem={renderTabBarItem}
-            activeColor='#ff5b1f'
+            style={{ width: width }}
           />
         )}
         renderScene={renderScene}

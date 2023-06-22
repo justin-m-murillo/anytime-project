@@ -37,7 +37,7 @@ const BusinessProfile = ({ data }) => {
             />
           ))}
         </ScrollView>
-        <View className='px-1 absolute left-3 bottom-3'>
+        <View className='px-1 absolute left-1 bottom-1'>
           <Text className='text-3xl font-bold text-white'>{businessName}</Text>
         </View>
       </View>
