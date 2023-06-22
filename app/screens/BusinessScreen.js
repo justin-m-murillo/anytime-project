@@ -1,14 +1,16 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from 'react-native';
+import React from 'react';
 
-import FeaturedItem from '../components/home/body/FeaturedItem'
+import BusinessProfile from '../components/business/BusinessProfile';
 
-const BusinessScreen = ({ businessName }) => {
+const BusinessScreen = ({ route, navigation }) => {
+  const data = route.params;
+
   return (
     <View>
-      <FeaturedItem businessName={businessName} />
+      <BusinessProfile data={data} />
     </View>
   )
 }
 
-export default BusinessScreen
+export default BusinessScreen;

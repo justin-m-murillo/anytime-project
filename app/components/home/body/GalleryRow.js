@@ -6,7 +6,7 @@ import GalleryColumn from './GalleryColumn';
 import styles from '../../../styles/gallery';
 import mainStyles from '../../../styles/mainstylesheet';
 
-const Gallery = ({ title, description }) => {
+const GalleryRow = ({ title, description }) => {
   const parentList = [1, 2, 3, 4,];
 
   return (
@@ -25,4 +25,4 @@ const Gallery = ({ title, description }) => {
   )
 }
 
-export default Gallery
+export default GalleryRow

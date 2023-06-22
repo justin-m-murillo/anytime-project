@@ -1,11 +1,10 @@
 import 'react-native-gesture-handler';
-import { useState, useEffect, useContext } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from './app/screens/HomeScreen';
-import BusinessProfile from './app/components/business/BusinessProfile';
+import BusinessScreen from './app/screens/BusinessScreen';
 
 const Stack = createStackNavigator();
 
@@ -22,8 +21,8 @@ export default function App() {
               component={HomeScreen}
             />
             <Stack.Screen 
-              name='BusinessProfile'
-              component={BusinessProfile}
+              name='BusinessScreen'
+              component={BusinessScreen}
             />
       </Stack.Navigator>
     </NavigationContainer>

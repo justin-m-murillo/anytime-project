@@ -1,11 +1,19 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, Image } from 'react-native';
+import React from 'react';
 
-const BusinessProfile = () => {
+const BusinessProfile = ({ data }) => {
+  const { imgUrl, businessName, distance } = data;
+
   return (
     <View>
+      <Image 
+        source={{
+          uri: imgUrl,
+        }}
+        className='h-48 w-48 rounded-sm'
+      />
       <View>
-        <Text>Title: Business Name</Text>
+        <Text>Title: {businessName}</Text>
       </View>
       <Text>Happy Hours</Text>
       <Text>Monday:</Text>
