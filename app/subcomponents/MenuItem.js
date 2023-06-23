@@ -1,27 +1,34 @@
 import { View, Text, Image } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
+
+import styles from '../styles/mainstylesheet';
 
 const MenuItem = ({ dealTitle, dealTimes, dealItems }) => {
   return (
     <View className='shrink'>
-      <Text>{dealTitle}</Text>
-      <View className='flex-row'>
-        {
-          dealTimes?.map(time => (
-            <View>
-              <Text className={styles.menuItemHours}>
-                {time.hours}, 
-              </Text>
-              <Text>{time.days}</Text>
-            </View>
-          ))
-        }
+      <View className='flex items-center'>
+
+        {/* Name of Deal, Hours, and Days */}
+        <Text className='text-xl font-bold'>{dealTitle}</Text>
+        <View className='mb-2'>
+          {
+            dealTimes?.map(time => (
+              <View className='flex-row'>
+                <Text className={styles.menuItemHours}>
+                  {time.hours}, 
+                </Text>
+                <Text> {time.days}</Text>
+              </View>
+            ))
+          }
+        </View>
       </View>
       
-      <View className='flex-row my-4'>
+      {/* Deal Items and corresponding Images */}
+      <View>
         {
           dealItems?.map(item => (
-            <View>
+            <View className='flex-row my-2'>
               <Image 
                 source={{
                   uri: item.img,
@@ -37,6 +44,7 @@ const MenuItem = ({ dealTitle, dealTimes, dealItems }) => {
           ))
         }
       </View>
+
     </View>
   )
 }

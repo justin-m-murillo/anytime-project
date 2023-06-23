@@ -18,18 +18,14 @@ const sampleBusinessData = {
       items: [
         {
           img: ImageGenerator(720),
-          description: 'morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus vestibulum sed',
+          description: 'Morbi tincidunt augue interdum velit euismod in pellentesque massa.\nPlacerat duis ultricies lacus sed turpis tincidunt.\nId aliquet risus feugiat in ante metus dictum at tempor',
         },
       ],
     },
     {
       id: 2,
-      deal: 'Happy Hour Deal1',
+      deal: 'Happy Hour Deal2',
       times: [
-        {
-          hours: '4pm - 7pm',
-          days: 'Tue - Thu',
-        },
         {
           hours: '11am - 3pm',
           days: 'Sat - Sun',
@@ -38,11 +34,14 @@ const sampleBusinessData = {
       items: [
         {
           img: ImageGenerator(720),
-          description: 'morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at tempor commodo ullamcorper a lacus vestibulum sed',
+          description: '- morbi tincidunt augue interdum velit\n' + 
+            '- euismod in pellentesque massa placerat\n' + 
+            '- duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus\n' + 
+            '- at tempor commodo ullamcorper a lacus vestibulum sed',
         },
         {
           img: ImageGenerator(720),
-          description: 'faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem integer vitae justo eget magna fermentum iaculis',
+          description: 'Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim. Sodales ut eu sem integer vitae justo eget magna fermentum iaculis.',
         },
       ],
     },
@@ -50,10 +49,19 @@ const sampleBusinessData = {
   special: [
     {
       id: 1,
-      img: ImageGenerator(720),
       deal: 'Special Deal1',
-      hours: 'all-day',
-      days: 'Mon - Fir'
+      times: [
+        {
+          hours: 'All-day',
+          days: 'Everyday',
+        }
+      ],
+      items: [
+        {
+          img: ImageGenerator(720),
+          description: 'ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat semper viverra nam libero justo laoreet sit amet'
+        }
+      ],
     },
   ],
   businessName: 'BusinessName',

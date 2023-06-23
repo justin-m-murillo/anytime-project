@@ -16,6 +16,7 @@ import InfoTab from '../tabs/InfoTab';
 const Tab = createMaterialTopTabNavigator();
 
 const BusinessTabsView = ({data}) => {
+  const height = useWindowDimensions().height;
   const activeColor = '#1e90ff';
   const inactiveColor = '#778899';
   const { 
