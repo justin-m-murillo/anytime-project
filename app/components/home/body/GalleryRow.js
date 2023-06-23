@@ -11,8 +11,8 @@ const GalleryRow = ({ title, description }) => {
 
   return (
     <View className={styles.container}>
-      <Text className={mainStyles.title}>Deals starting soon!</Text>
-      <Text className={mainStyles.shortDesc}>Don't miss out on a great time</Text>
+      <Text className={mainStyles.appTitle}>Deals starting soon!</Text>
+      <Text className={mainStyles.appShortDesc}>Don't miss out on a great time</Text>
       <FlatList
         className={mainStyles.featuredList}
         data={parentList}

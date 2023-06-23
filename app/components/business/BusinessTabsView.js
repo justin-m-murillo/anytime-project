@@ -1,78 +1,79 @@
 import { View, Text, StatusBar, useWindowDimensions } from 'react-native';
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 
-import { TabView, TabBar, TabBarItem, SceneMap } from 'react-native-tab-view';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-import MenuScreen from '../tabs/MenuTab';
-import GeoLocationScreen from '../tabs/GeoLocationTab';
+import { 
+  BookOpenIcon, 
+  MapPinIcon, 
+  InformationCircleIcon 
+} from 'react-native-heroicons/outline';
 
-const BusinessTabsView = () => {
-  const [index, setIndex] = useState(0);
-  const [routes] = useState([
-    { key: 'first', index: 0, title: 'Menu' },
-    { key: 'second', index: 1, title: 'Location' },
-  ]);
+import MenuTab from '../tabs/MenuTab';
+import GeoLocationTab from '../tabs/GeoLocationTab';
+import InfoTab from '../tabs/InfoTab';
 
-  const width = useWindowDimensions().width;
+const Tab = createMaterialTopTabNavigator();
 
-  const renderScene = SceneMap({
-    first: MenuScreen,
-    second: GeoLocationScreen,
-  });
-
-  const renderLabel = ({ route, focused }) => {
-    if (focused) {
-      return (
-        <Text className='my-1'>
-          {route.title}
-        </Text>
-      );
-    } else {
-      return (
-        <Text className='my-1 text-gray-700'>
-          {route.title}
-        </Text>
-      );
-    }
-  }
-
-  const renderTabBarItem = (props) => {
-    return (
-      <TabBarItem 
-        {...props}
-        renderLabel={renderLabel}
-      />
-    );
-  }
-
-
+const BusinessTabsView = ({data}) => {
+  const activeColor = '#1e90ff';
+  const inactiveColor = '#778899';
+  const { 
+    happyhour, 
+    special, 
+    businessName,
+    address,
+    distance,
+    phoneNumber,
+    email
+  } = data;
 
   return (
     <View style={{ height: '100%' }}>
-      <TabView 
-        navigationState={{ index, routes }}
-        renderTabBar={props => (
-          <TabBar 
-            {...props}
-            indicatorStyle={{ 
-              backgroundColor: '#2FAFDA', 
-              height: '100%',
-            }}
-            indicatorContainerStyle={{
-              width: width,
-              backgroundColor: '#63c3e3',
-            }}
-            renderTabBarItem={renderTabBarItem}
-            style={{ width: width }}
-          />
-        )}
-        renderScene={renderScene}
-        onIndexChange={setIndex}
-        initialLayout={{ width: width }}
-        style={{
-          marginTop: StatusBar.currentHeight
-        }}
-      />
+      <Tab.Navigator>
+        <Tab.Screen 
+          name='Menu' 
+          children={() => <MenuTab happyhour={happyhour} special={special} />}
+          options={{
+            tabBarShowLabel: false,
+            tabBarIcon: ({ focused }) => (
+              <BookOpenIcon 
+                color={
+                  focused === true ? activeColor : inactiveColor
+                }
+              />
+            ),
+          }}
+        />
+        <Tab.Screen 
+          name='Location' 
+          component={GeoLocationTab} 
+          options={{
+            tabBarShowLabel: false,
+            tabBarIcon: ({ focused }) => (
+              <MapPinIcon 
+                color={
+                  focused === true ? activeColor : inactiveColor
+                }
+              />
+            ),
+          }}
+        />
+        <Tab.Screen 
+          name='Info'
+          component={InfoTab}
+          options={{
+            tabBarShowLabel: false,
+            tabBarIcon: ({ focused }) => (
+              <InformationCircleIcon 
+                color={
+                  focused === true ? activeColor : inactiveColor
+                }
+              />
+            ),
+          }}
+        />
+      </Tab.Navigator>
     </View>
   );
 }

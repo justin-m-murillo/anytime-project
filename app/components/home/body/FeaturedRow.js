@@ -13,8 +13,8 @@ const FeaturedRow = ({ title, description, items }) => {
   return (
     <View className={styles.container}>
       <View>
-        <Text className={mainStyles.title}>{title}</Text>
-        <Text className={mainStyles.shortDesc}>{description}</Text>
+        <Text className={mainStyles.appTitle}>{title}</Text>
+        <Text className={mainStyles.appShortDesc}>{description}</Text>
       </View>
       <FlatList
         className={styles.featuredList}

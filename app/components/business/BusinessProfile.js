@@ -11,23 +11,55 @@ const Tab = createMaterialTopTabNavigator();
 const BusinessProfile = ({ data }) => {
   const { width, height } = useWindowDimensions();
   const { imgUrl, businessName, distance } = data;
-  const sample = [
-    { id: 1, img: imgUrl, address: '1234 Santa Lucia Dr, Santa Clara, CA 95051' },
-    { id: 2, img: ImageGenerator(720), address: '1234 Santa Lucia Dr, Santa Clara, CA 95051' },
-    { id: 3, img: ImageGenerator(720), address: '1234 Santa Lucia Dr, Santa Clara, CA 95051' },
-    { id: 4, img: ImageGenerator(720), address: '1234 Santa Lucia Dr, Santa Clara, CA 95051' },
-    { id: 5, img: ImageGenerator(720), address: '1234 Santa Lucia Dr, Santa Clara, CA 95051' },
+  const sampleImages = [
+    { id: 1, img: imgUrl,  },
+    { id: 2, img: ImageGenerator(720), },
+    { id: 3, img: ImageGenerator(720), },
+    { id: 4, img: ImageGenerator(720), },
+    { id: 5, img: ImageGenerator(720), },
   ];
-
+  const sampleData = {
+    happyhour: [
+      {
+        id: 1,
+        img: ImageGenerator(720),
+        menu: 'Happy Hour Deal1',
+        hours: '3pm - 6pm',
+        days: 'Mon - Thu'
+      },
+      {
+        id: 2,
+        img: ImageGenerator(720),
+        menu: 'Happy Hour Deal2',
+        hours: '1pm - 4pm',
+        days: 'Fri - Sun'
+      }
+    ],
+    special: [
+      {
+        id: 1,
+        img: ImageGenerator(720),
+        menu: 'Special Deal1',
+        hours: 'all-day',
+        days: 'Mon - Fir'
+      },
+    ],
+    businessName: businessName,
+    address: '3156 Santa Lucia Dr, Santa Clara, CA 95051',
+    distance: distance,
+    phoneNumber: '(123) 456-7890',
+    email: 'business@gmail.com',
+  };
+  
   return (
-    <View className=''>
+    <View>
       <View className='relative'>
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
           pagingEnabled={true}
         >
-          {sample?.map((elem) => (
+          {sampleImages?.map((elem) => (
             <Image
               key={elem.id} 
               source={{
@@ -41,7 +73,7 @@ const BusinessProfile = ({ data }) => {
           <Text className='text-3xl font-bold text-white'>{businessName}</Text>
         </View>
       </View>
-      <BusinessTabsView />
+      <BusinessTabsView data={sampleData} />
     </View>
   )
 }
