@@ -4,7 +4,7 @@ const styles = {
   appSubTitle: 'font-bold text-lg py-1 mx-2',
   appShortDesc: 'text-gray-500 py-1 mx-2',
   menuItemDesc: 'shrink',
-  menuItemDescContainer: 'my-1',
+  menuItemDescContainer: 'shrink mx-1',
   menuItemHours: 'text-gray-500',
 }
 
