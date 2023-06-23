@@ -5,6 +5,7 @@ const sampleBusinessData = {
   address: '3156 Santa Lucia Dr, Santa Clara, CA 95051',
   distance: 2.5,
   phoneNumber: '(123) 456-7890',
+  website: 'www.this-biz.com',
   email: 'business@gmail.com',
   happyhour: [
     {

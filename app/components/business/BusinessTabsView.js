@@ -26,6 +26,7 @@ const BusinessTabsView = ({data}) => {
     address,
     distance,
     phoneNumber,
+    website,
     email,
     photoGallery,
   } = data;
@@ -55,6 +56,7 @@ const BusinessTabsView = ({data}) => {
               address={address}
               distance={distance}
               phoneNumber={phoneNumber}
+              website={website}
               email={email}
               photoGallery={photoGallery}
             />

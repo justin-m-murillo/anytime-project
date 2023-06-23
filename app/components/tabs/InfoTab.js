@@ -9,6 +9,7 @@ const InfoTab = ({
   address,
   distance,
   phoneNumber,
+  website,
   email,
   photoGallery
 }) => {
@@ -26,9 +27,12 @@ const InfoTab = ({
         <Text className={styles.appBizDetails}>{phoneNumber}</Text>
       </View>
       <View>
+        <Text className={styles.appBizDetails}>{website}</Text>
+      </View>
+      <View>
         <Text className={styles.appBizDetails}>{email}</Text>
       </View>
-      <View className='w-full items-center my-4'>
+      <View className='w-full items-center my-2'>
         <Text className={styles.appSubTitle}>Photos</Text>
       </View>
       <View style={{ height: '100%', width: '100%', alignItems: 'center' }}>
@@ -47,7 +51,7 @@ const InfoTab = ({
             </View>
           )}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ paddingBottom: 660 }}
+          contentContainerStyle={{ paddingBottom: 680 }}
         />
       </View>
     </View>
