@@ -5,7 +5,7 @@ import styles from '../styles/mainstylesheet';
 
 const MenuItem = ({ dealTitle, dealTimes, dealItems }) => {
   return (
-    <View className='shrink'>
+    <View className='shrink m-2'>
       <View className='flex items-center'>
 
         {/* Name of Deal, Hours, and Days */}

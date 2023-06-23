@@ -1,10 +1,55 @@
-import { View, Text } from 'react-native'
+import { View, Text, FlatList, Image, useWindowDimensions } from 'react-native';
 import React from 'react'
 
-const InfoTab = () => {
+import styles from '../../styles/mainstylesheet';
+import imgStyles from '../../styles/featureditem';
+
+const InfoTab = ({
+  businessName,
+  address,
+  distance,
+  phoneNumber,
+  email,
+  photoGallery
+}) => {
+  const { width, height } = useWindowDimensions();
+
   return (
     <View>
-      <Text>InfoTab</Text>
+      <View>
+        <Text className={styles.appSubTitle}>{businessName}</Text>
+      </View>
+      <View>
+        <Text className={styles.appBizDetails}>{address}</Text>
+      </View>
+      <View>
+        <Text className={styles.appBizDetails}>{phoneNumber}</Text>
+      </View>
+      <View>
+        <Text className={styles.appBizDetails}>{email}</Text>
+      </View>
+      <View className='w-full items-center my-4'>
+        <Text className={styles.appSubTitle}>Photos</Text>
+      </View>
+      <View style={{ height: '100%', width: '100%', alignItems: 'center' }}>
+        <FlatList 
+          data={photoGallery}
+          numColumns={3}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({item}) => (
+            <View style={imgStyles.shadow}>
+              <Image 
+                source={{
+                  uri: item.img
+                }}
+                style={{ height: (width/3), width: (width/3) }}
+              />
+            </View>
+          )}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{ paddingBottom: 660 }}
+        />
+      </View>
     </View>
   )
 }

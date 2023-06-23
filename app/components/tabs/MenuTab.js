@@ -1,51 +1,27 @@
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, useWindowDimensions, FlatList } from 'react-native';
 import React from 'react';
-
-import styles from '../../styles/mainstylesheet';
 
 import MenuItem from '../../subcomponents/MenuItem';
 
 const MenuTab = ({ happyhour, special }) => {
+  const deals = [...special, ...happyhour];
 
   return (
-    <ScrollView className='mx-2'>
-      <View style={{ paddingBottom: 100 }}>
-        <View>
-          { /* Happy Hour Deals */
-            special?.map(item => (
-              <View 
-                key={item.id} 
-                className='flex-row my-2'
-              >
-                {/* Happy Hour Items Display */}
-                <MenuItem 
-                  dealTitle={item.deal} 
-                  dealTimes={item.times}
-                  dealItems={item.items}
-                />
-              </View>
-            ))
-          }
-        </View>
-        <View>
-          { /* Happy Hour Deals */
-            happyhour?.map(item => (
-              <View 
-                key={item.id} 
-                className='flex-row my-2'
-              >
-                {/* Happy Hour Items Display */}
-                <MenuItem 
-                  dealTitle={item.deal} 
-                  dealTimes={item.times}
-                  dealItems={item.items}
-                />
-              </View>
-            ))
-          }
-        </View>
-      </View>
-    </ScrollView>
+    <View style={{ flex: 1, height: '100%', width: '100%' }} className='pt-2'>
+      <FlatList 
+        data={deals}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({item}) => (
+          <MenuItem
+            dealTitle={item.deal}
+            dealTimes={item.times}
+            dealItems={item.items}
+            style={{ flex: 1 }}
+          />
+        )}
+        contentContainerStyle={{ paddingBottom: 300 }}
+      />
+    </View>
   )
 }
 

@@ -26,11 +26,12 @@ const BusinessTabsView = ({data}) => {
     address,
     distance,
     phoneNumber,
-    email
+    email,
+    photoGallery,
   } = data;
 
   return (
-    <View style={{ height: '100%' }}>
+    <View style={{ height: height }}>
       <Tab.Navigator>
         <Tab.Screen 
           name='Menu' 
@@ -47,12 +48,21 @@ const BusinessTabsView = ({data}) => {
           }}
         />
         <Tab.Screen 
-          name='Location' 
-          component={GeoLocationTab} 
+          name='Info'
+          children={() => 
+            <InfoTab 
+              businessName={businessName}
+              address={address}
+              distance={distance}
+              phoneNumber={phoneNumber}
+              email={email}
+              photoGallery={photoGallery}
+            />
+          }
           options={{
             tabBarShowLabel: false,
             tabBarIcon: ({ focused }) => (
-              <MapPinIcon 
+              <InformationCircleIcon 
                 color={
                   focused === true ? activeColor : inactiveColor
                 }
@@ -61,12 +71,12 @@ const BusinessTabsView = ({data}) => {
           }}
         />
         <Tab.Screen 
-          name='Info'
-          component={InfoTab}
+          name='Location' 
+          children={() => <GeoLocationTab />}
           options={{
             tabBarShowLabel: false,
             tabBarIcon: ({ focused }) => (
-              <InformationCircleIcon 
+              <MapPinIcon 
                 color={
                   focused === true ? activeColor : inactiveColor
                 }
