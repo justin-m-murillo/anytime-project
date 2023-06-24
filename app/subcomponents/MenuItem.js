@@ -13,7 +13,10 @@ const MenuItem = ({ dealTitle, dealTimes, dealItems }) => {
         <View className='mb-2'>
           {
             dealTimes?.map(time => (
-              <View className='flex-row'>
+              <View 
+                key={time.id}
+                className='flex-row'
+              >
                 <Text className={styles.menuItemHours}>
                   {time.hours}, 
                 </Text>
@@ -28,7 +31,10 @@ const MenuItem = ({ dealTitle, dealTimes, dealItems }) => {
       <View>
         {
           dealItems?.map(item => (
-            <View className='flex-row my-2'>
+            <View 
+              key={item.id}
+              className='flex-row my-2'
+            >
               <Image 
                 source={{
                   uri: item.img,

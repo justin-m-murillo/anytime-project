@@ -3,8 +3,7 @@ import React from 'react';
 
 import MenuItem from '../../subcomponents/MenuItem';
 
-const MenuTab = ({ happyhour, special }) => {
-  const deals = [...special, ...happyhour];
+const MenuTab = ({ deals }) => {
 
   return (
     <View style={{ flex: 1, height: '100%', width: '100%' }} className='pt-2'>

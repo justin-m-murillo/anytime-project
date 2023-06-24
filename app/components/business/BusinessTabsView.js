@@ -6,7 +6,8 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { 
   BookOpenIcon, 
   MapPinIcon, 
-  InformationCircleIcon 
+  InformationCircleIcon,
+  StarIcon, 
 } from 'react-native-heroicons/outline';
 
 import MenuTab from '../tabs/MenuTab';
@@ -34,20 +35,38 @@ const BusinessTabsView = ({data}) => {
   return (
     <View style={{ height: height }}>
       <Tab.Navigator>
-        <Tab.Screen 
-          name='Menu' 
-          children={() => <MenuTab happyhour={happyhour} special={special} />}
-          options={{
-            tabBarShowLabel: false,
-            tabBarIcon: ({ focused }) => (
-              <BookOpenIcon 
-                color={
-                  focused === true ? activeColor : inactiveColor
-                }
-              />
-            ),
-          }}
-        />
+        {happyhour.length > 0 ?
+          <Tab.Screen 
+            name='Happy Hour' 
+            children={() => <MenuTab deals={happyhour} />}
+            options={{
+              tabBarShowLabel: false,
+              tabBarIcon: ({ focused }) => (
+                <BookOpenIcon 
+                  color={
+                    focused === true ? activeColor : inactiveColor
+                  }
+                />
+              ),
+            }}
+          /> : null
+        }
+        {special.length > 0 ? 
+          <Tab.Screen 
+            name='Specials' 
+            children={() => <MenuTab deals={special} />}
+            options={{
+              tabBarShowLabel: false,
+              tabBarIcon: ({ focused }) => (
+                <StarIcon 
+                  color={
+                    focused === true ? activeColor : inactiveColor
+                  }
+                />
+              ),
+            }}
+          /> : null
+        }
         <Tab.Screen 
           name='Info'
           children={() => 
