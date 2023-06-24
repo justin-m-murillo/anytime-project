@@ -1,16 +1,28 @@
-import { View, Text, Image, useWindowDimensions, ScrollView } from 'react-native';
+import { 
+  View, 
+  Text, 
+  Image, 
+  useWindowDimensions, 
+  ScrollView, 
+  TouchableOpacity 
+} from 'react-native';
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+import { ChevronLeftIcon } from 'react-native-heroicons/solid';
 
 import ImageGenerator from '../../utils/sampleImgGenerator';
 import sampleBusinessData from '../../utils/sampleBusinessData';
+
+import styles from '../../styles/businessprofile';
 
 import BusinessTabsView from './BusinessTabsView';
 
 const Tab = createMaterialTopTabNavigator();
 
 const BusinessProfile = ({ data }) => {
+  const navigation = useNavigation();
   const { width, height } = useWindowDimensions();
   const { imgUrl, businessName, distance } = data;
   const sampleImages = [
@@ -40,8 +52,17 @@ const BusinessProfile = ({ data }) => {
             />
           ))}
         </ScrollView>
-        <View className='px-1 absolute left-1 bottom-1'>
-          <Text className='text-3xl font-bold text-white'>{businessName}</Text>
+        <View className={styles.goBackIconContainer}>
+          <TouchableOpacity 
+            className={styles.goBackIconTouchable}
+            onPress={() => navigation.goBack()}
+          >
+            <ChevronLeftIcon style={styles.goBackIconStyle}/>
+            <Text className={styles.goBackText}>Go Back</Text>
+          </TouchableOpacity>
+        </View>
+        <View className={styles.businessNameContainer}>
+          <Text className={styles.businessName}>{businessName}</Text>
         </View>
       </View>
       <BusinessTabsView data={sampleBusinessData} />
