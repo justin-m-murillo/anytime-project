@@ -19,12 +19,7 @@ const DismissKeyboard = ({ children }) => (
   </TouchableWithoutFeedback>
 );
 
-const Home = () => {
-  const [userData, setUserData] = useState({
-    userName: 'anytime.username',
-    location: 'San Jose • CA',
-  });
-
+const Home = ({ userData }) => {
   const [features, setFeatures] = useState([1, 2, 3]);
 
   return (
