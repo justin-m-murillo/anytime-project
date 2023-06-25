@@ -6,6 +6,7 @@ import {
   useWindowDimensions
 } from 'react-native';
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 import { Bars3CenterLeftIcon } from 'react-native-heroicons/outline';
 
@@ -15,6 +16,7 @@ const Header = ({
   userData: { userName, location }
 }) => {
   const { width, height } = useWindowDimensions();
+  const navigation = useNavigation();
 
   return (
     <View style={{ width: width }} className='flex-row w-full px-5'>
@@ -33,7 +35,7 @@ const Header = ({
         </View>
       </View>
       <View className='flex-2 justify-center'>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={navigation.toggleDrawer}>
           <Bars3CenterLeftIcon color={'black'} />
         </TouchableOpacity>
       </View>
