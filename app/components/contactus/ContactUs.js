@@ -15,7 +15,7 @@ const ContactUs = ({ userData }) => {
 
             {/* Contact Us Title */}
             <View className={styles.titleWrapper}>
-              <Text className={styles.title}>ContactUs</Text>
+              <Text className={styles.title}>Thank you for choosing Anytime!</Text>
             </View>
 
             {/* App/Company Statements */}
