@@ -13,4 +13,4 @@ const ContactUsScreen = ({ userData }) => {
   )
 }
 
-export default ContactUsScreen
+export default ContactUsScreen;

@@ -1,44 +1,17 @@
-import { 
-  View, 
-  Text, 
-  Image,
-  TouchableOpacity, 
-  useWindowDimensions
-} from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
 
-import { Bars3CenterLeftIcon } from 'react-native-heroicons/outline';
+import HeaderUser from './HeaderUser';
+import SearchBar from './SearchBar';
 
-import styles from '../../../styles/header';
-
-const Header = ({
-  userData: { userName, location }
-}) => {
-  const { width, height } = useWindowDimensions();
-  const navigation = useNavigation();
+const Header = ({ userData }) => {
 
   return (
-    <View style={{ width: width }} className='flex-row w-full px-5'>
-      <View className='flex-row flex-1 mb-2'>
-        <Image 
-          source={{
-            uri: 'https://picsum.photos/400'
-          }}
-          className={styles.profileImage}
-        />
-        <View className='px-2'>
-          <Text className={styles.userName}>{userName}</Text>
-          <TouchableOpacity>
-            <Text className={styles.location}>{location}</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-      <View className='flex-2 justify-center'>
-        <TouchableOpacity onPress={navigation.toggleDrawer}>
-          <Bars3CenterLeftIcon color={'black'} />
-        </TouchableOpacity>
-      </View>
+    <View>
+        {/* User Profile Pic, Username, and Current Location */}
+        <HeaderUser userData={userData} />
+        {/* Search Bar */}
+        <SearchBar />
     </View>
   )
 }

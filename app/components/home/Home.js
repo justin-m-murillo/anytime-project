@@ -8,16 +8,11 @@ import {
 import React, { useState, } from 'react';
 
 import Header from './header/Header';
-import SearchBar from './header/SearchBar';
-
-import styles from '../../styles/homescreen';
 import Body from '../home/body/Body';
 
-const DismissKeyboard = ({ children }) => (
-  <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}> 
-    {children}
-  </TouchableWithoutFeedback>
-);
+//import DismissKeyboard from '../../utils/dismisskeyboard';
+
+import styles from '../../styles/homescreen';
 
 const Home = ({ userData }) => {
   const [features, setFeatures] = useState([1, 2, 3]);
@@ -25,20 +20,15 @@ const Home = ({ userData }) => {
   return (
     <View>
       <SafeAreaView className={styles.safeAreaView}>
-        <DismissKeyboard>
-          <View>
-            {/* Header */}
-            <Header userData={userData}  />
-            
-            {/* SearchBar */}
-            <SearchBar />
-          </View>
-        </DismissKeyboard>
+        <View>
+          {/* Header */}
+          <Header userData={userData}  />
+        </View>
 
-        {/* Body */}
         <View className='bg-gray-100'>
           <ScrollView>
             <View style={{ paddingBottom: 440 }}>
+              {/* Body */}
               <Body 
                 features={features}
               />
