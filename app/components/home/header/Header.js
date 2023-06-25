@@ -16,4 +16,4 @@ const Header = ({ userData }) => {
   )
 }
 
-export default Header
+export default Header;

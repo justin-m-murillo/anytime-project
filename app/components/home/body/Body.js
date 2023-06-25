@@ -62,4 +62,4 @@ const Body = ({ features }) => {
   )
 }
 
-export default Body
+export default Body;
