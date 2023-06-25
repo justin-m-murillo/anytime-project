@@ -9,8 +9,6 @@ import React, { useState, } from 'react';
 import Header from './header/Header';
 import Body from '../home/body/Body';
 
-//import DismissKeyboard from '../../utils/dismisskeyboard';
-
 import styles from '../../styles/homescreen';
 
 const Home = ({ userData }) => {
