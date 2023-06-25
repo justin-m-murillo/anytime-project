@@ -12,7 +12,7 @@ import { Bars3CenterLeftIcon } from 'react-native-heroicons/outline';
 import styles from '../../../styles/header';
 
 const Header = ({
-  userData: { userName, location } 
+  userData: { userName, location }
 }) => {
   const { width, height } = useWindowDimensions();
 
@@ -33,7 +33,9 @@ const Header = ({
         </View>
       </View>
       <View className='flex-2 justify-center'>
-        <Bars3CenterLeftIcon color={'black'} />
+        <TouchableOpacity>
+          <Bars3CenterLeftIcon color={'black'} />
+        </TouchableOpacity>
       </View>
     </View>
   )

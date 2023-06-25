@@ -1,18 +1,12 @@
 import { View } from 'react-native';
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 
 import { StatusBar } from 'expo-status-bar';
 
 import BusinessProfile from '../components/business/BusinessProfile';
 
-const BusinessScreen = ({ route, navigation }) => {
+const BusinessScreen = ({ route }) => {
   const data = route.params;
-
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerShown: false,
-    });
-  });
 
   return (
     <View>

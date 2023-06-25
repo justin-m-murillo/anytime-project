@@ -1,5 +1,4 @@
 import 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -14,9 +13,12 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home' >
+      <Stack.Navigator 
+        initialRouteName='HomeScreen'
+        screenOptions={{ headerShown: false, }}
+      >
             <Stack.Screen 
-              name='Home' 
+              name='HomeScreen' 
               component={HomeScreen}
             />
             <Stack.Screen 

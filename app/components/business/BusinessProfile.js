@@ -33,7 +33,10 @@ const BusinessProfile = ({ data }) => {
     { id: 5, img: ImageGenerator(720), },
   ];
   
-  
+  const goToPrev = () => (
+    navigation.goBack()
+  );
+
   return (
     <View>
       <View className='relative'>
@@ -55,7 +58,7 @@ const BusinessProfile = ({ data }) => {
         <View className={styles.goBackIconContainer}>
           <TouchableOpacity 
             className={styles.goBackIconTouchable}
-            onPress={() => navigation.goBack()}
+            onPress={goToPrev}
           >
             <ChevronLeftIcon style={styles.goBackIconStyle}/>
             <Text className={styles.goBackText}>Go Back</Text>

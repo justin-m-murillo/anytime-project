@@ -8,7 +8,7 @@ const FeaturedItem = ({
     imgUrl, 
     businessName, 
     distance 
-  }) => {
+}) => {
   const navigation = useNavigation();
 
   return (
