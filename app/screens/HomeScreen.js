@@ -1,10 +1,8 @@
-import { View, } from 'react-native';
 import React, { useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import Home from "../components/home/Home";
+import Home from '../components/home/Home';
 import ContactUsScreen from './ContactUsScreen';
 
 const Drawer = createDrawerNavigator();
