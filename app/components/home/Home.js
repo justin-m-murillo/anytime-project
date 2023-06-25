@@ -26,7 +26,9 @@ const Home = ({ userData }) => {
         </View>
 
         <View className='bg-gray-100'>
-          <ScrollView>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+          >
             <View style={{ paddingBottom: 440 }}>
               {/* Body */}
               <Body 
