@@ -1,10 +1,9 @@
 import { 
   View, 
   SafeAreaView,
-  ScrollView, 
-  Keyboard, 
-  TouchableWithoutFeedback, 
+  ScrollView,
 } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import React, { useState, } from 'react';
 
 import Header from './header/Header';
@@ -19,6 +18,7 @@ const Home = ({ userData }) => {
 
   return (
     <View>
+      <StatusBar style='auto' />
       <SafeAreaView className={styles.safeAreaView}>
         <View>
           {/* Header */}

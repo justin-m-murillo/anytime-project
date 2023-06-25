@@ -12,7 +12,7 @@ const HeaderUser = ({
   const navigation = useNavigation();
 
   return (
-    <View style={{ width: width }} className='flex-row w-full px-5'>
+    <View style={{ width: width }} className='flex-row w-full px-5 '>
       <View className='flex-row flex-1 mb-2'>
         <Image 
           source={{
