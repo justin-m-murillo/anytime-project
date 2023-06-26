@@ -12,7 +12,6 @@ const Stack = createStackNavigator();
 
 export default function App() {
   const user = useContext(UserContext);
-  console.log(user.profileImg);
 
   return (
     <UserContext.Provider value={user}>
