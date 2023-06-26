@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, Image } from 'react-native';
-import React from 'react';
+import React, { useContext } from 'react';
 
 import {
   DrawerItemList,
@@ -7,9 +7,13 @@ import {
 } from '@react-navigation/drawer';
 
 import styles from '../../styles/sidebarmenu';
+import { UserContext } from '../../context/UserContext';
 
 const SideBarMenu = (props) => {
-  const { userName, profileImg } = props.userData;
+  const {
+    userName,
+    profileImg,
+  } = useContext(UserContext);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>

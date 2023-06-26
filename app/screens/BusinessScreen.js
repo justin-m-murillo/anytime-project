@@ -5,13 +5,13 @@ import { StatusBar } from 'expo-status-bar';
 
 import BusinessProfile from '../components/business/BusinessProfile';
 
-const BusinessScreen = ({ route }) => {
-  const data = route.params;
+const BusinessScreen = ({ route, userData }) => {
+  const routeData = route.params;
 
   return (
     <View>
       <StatusBar style="light" />
-      <BusinessProfile data={data} />
+      <BusinessProfile data={routeData} />
     </View>
   )
 }

@@ -1,13 +1,13 @@
-import { View, Text, SafeAreaView } from 'react-native';
+import { View, } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import ContactUs from '../components/contactus/ContactUs';
 
-const ContactUsScreen = ({ userData }) => {
+const ContactUsScreen = () => {
   return (
     <View>
       <StatusBar style='auto' />
-      <ContactUs userData={userData} />
+      <ContactUs />
     </View>
   )
 }

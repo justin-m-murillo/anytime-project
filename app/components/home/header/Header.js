@@ -4,12 +4,12 @@ import React from 'react';
 import HeaderUser from './HeaderUser';
 import SearchBar from './SearchBar';
 
-const Header = ({ userData }) => {
+const Header = () => {
 
   return (
     <View>
         {/* User Profile Pic, Username, and Current Location */}
-        <HeaderUser userData={userData} />
+        <HeaderUser />
         {/* Search Bar */}
         <SearchBar />
     </View>

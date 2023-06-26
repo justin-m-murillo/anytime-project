@@ -11,7 +11,7 @@ import Body from '../home/body/Body';
 
 import styles from '../../styles/homescreen';
 
-const Home = ({ userData }) => {
+const Home = () => {
   const [features, setFeatures] = useState([1, 2, 3]);
 
   return (
@@ -19,19 +19,19 @@ const Home = ({ userData }) => {
       <StatusBar style='auto' />
       <SafeAreaView className={styles.safeAreaView}>
         <View>
+
           {/* Header */}
-          <Header userData={userData}  />
+          <Header  />
+
         </View>
 
         <View className='bg-gray-100'>
-          <ScrollView
-            showsVerticalScrollIndicator={false}
-          >
+          <ScrollView showsVerticalScrollIndicator={false}>
             <View style={{ paddingBottom: 440 }}>
+
               {/* Body */}
-              <Body 
-                features={features}
-              />
+              <Body features={features} />
+
             </View>
           </ScrollView>
         </View>

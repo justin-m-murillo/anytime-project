@@ -5,13 +5,13 @@ import Header from '../home/header/Header';
 
 import styles from '../../styles/contactus';
 
-const ContactUs = ({ userData }) => {
+const ContactUs = () => {
   return (
     <View>
       <SafeAreaView>
-        <Header userData={userData} />
+        <Header />
         <View className={styles.container}>
-          <View style={styles.shadow} className={styles.contentWrapper}>
+          <View className={styles.contentWrapper}>
 
             {/* Contact Us Title */}
             <View className={styles.titleWrapper}>

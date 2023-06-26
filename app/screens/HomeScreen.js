@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { useTheme } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -13,17 +13,9 @@ import {
   EnvelopeIcon,
 } from 'react-native-heroicons/solid';
 
-import sampleImgGenerator from '../utils/sampleImgGenerator';
-
 const Drawer = createDrawerNavigator();
 
 const HomeScreen = () => {
-  const [userData, setUserData] = useState({
-    userName: 'anytime.username',
-    location: 'San Jose • CA',
-    profileImg: sampleImgGenerator(720)
-  });
-
   const { colors } = useTheme();
   const iconActiveColor = colors.primary;
   const iconInactiveColor = '#d1d5db'; {/* Tailwind CSS: text-gray-300 */}
@@ -36,7 +28,7 @@ const HomeScreen = () => {
         swipeEdgeWidth: 0,
         drawerPosition: 'right',
       }}
-      drawerContent={(props) => <SideBarMenu {...props} userData={userData} />}
+      drawerContent={(props) => <SideBarMenu {...props} /> /* SideBar Menu */ }
     >
       <Drawer.Screen 
         name='Home' 
@@ -49,10 +41,10 @@ const HomeScreen = () => {
             />
           )
         }}
-        children={() => <Home userData={userData} />} 
+        children={(props) => <Home {...props} />} 
       />
       <Drawer.Screen 
-        name='ContactUs'
+        name='ContactUsScreen'
         options={{ 
           drawerLabel: 'Contact Us',
           drawerIcon: ({ focused }) => (
@@ -62,7 +54,7 @@ const HomeScreen = () => {
             />
           )
         }} 
-        children={()=> <ContactUsScreen userData={userData} />} 
+        children={(props)=> <ContactUsScreen {...props} />} 
       />
     </Drawer.Navigator>
   )
