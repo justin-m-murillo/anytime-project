@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 
-import { NavigationContainer } from '@react-navigation/native';
+import { useTheme } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import SideBarMenu from '../components/sidebar/SideBarMenu';
 
 import Home from '../components/home/Home';
 import ContactUsScreen from './ContactUsScreen';
+
+import { 
+  HomeIcon,
+  EnvelopeIcon, 
+  AdjustmentsHorizontalIcon
+} from 'react-native-heroicons/solid';
 
 import sampleImgGenerator from '../utils/sampleImgGenerator';
 
@@ -18,6 +24,10 @@ const HomeScreen = () => {
     location: 'San Jose • CA',
     profileImg: sampleImgGenerator(720)
   });
+
+  const { colors } = useTheme();
+  const iconActiveColor = colors.primary;
+  const iconInactiveColor = '#d1d5db'; {/* Tailwind CSS: text-gray-300 */}
 
   return (
     <Drawer.Navigator
@@ -31,12 +41,28 @@ const HomeScreen = () => {
     >
       <Drawer.Screen 
         name='Home' 
-        options={{ drawerLabel: 'Home' }}
+        options={{ 
+          drawerLabel: 'Home', 
+          drawerIcon: ({ focused }) => (
+            <HomeIcon 
+              size={20}
+              color={ focused ? iconActiveColor : iconInactiveColor }
+            />
+          )
+        }}
         children={() => <Home userData={userData} />} 
       />
       <Drawer.Screen 
         name='ContactUs'
-        options={{ drawerLabel: 'Contact Us' }} 
+        options={{ 
+          drawerLabel: 'Contact Us',
+          drawerIcon: ({ focused }) => (
+            <EnvelopeIcon 
+              size={20} 
+              color={ focused ? iconActiveColor : iconInactiveColor }
+            />
+          )
+        }} 
         children={()=> <ContactUsScreen userData={userData} />} 
       />
     </Drawer.Navigator>
