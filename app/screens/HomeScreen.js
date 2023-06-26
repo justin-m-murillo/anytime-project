@@ -10,8 +10,7 @@ import ContactUsScreen from './ContactUsScreen';
 
 import { 
   HomeIcon,
-  EnvelopeIcon, 
-  AdjustmentsHorizontalIcon
+  EnvelopeIcon,
 } from 'react-native-heroicons/solid';
 
 import sampleImgGenerator from '../utils/sampleImgGenerator';
