@@ -54,7 +54,7 @@ const HomeScreen = () => {
         !isLoggedIn ? 
           <Drawer.Screen 
             name='LogInScreen'
-            options={drawerScreenOptions('Log In or Sign Up', UserCircleIcon)}
+            options={drawerScreenOptions('Log In', UserCircleIcon)}
             children={(props) => <LogInScreen {...props} />}
           />
           : null

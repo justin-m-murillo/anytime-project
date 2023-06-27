@@ -7,6 +7,7 @@ const styles = {
   menuItemDesc: 'shrink',
   menuItemDescContainer: 'shrink mx-1',
   menuItemHours: 'text-gray-500',
+  safeAreaView: 'bg-white',
 }
 
 export default styles;

@@ -43,6 +43,7 @@ const HeaderUser = () => {
           userName={userName}
           location={location}
           profileImg={profileImg}
+          isLoggedIn={isLoggedIn}
         />
       </View>
       <View className='flex-2 justify-center'>
