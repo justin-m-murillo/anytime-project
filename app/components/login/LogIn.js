@@ -1,16 +1,46 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, useWindowDimensions } from 'react-native';
+import React from 'react';
+
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+import LogInTab from '../tabs/LogInTab';
+import SignUpTab from '../tabs/SignUpTab';
 
 import styles from '../../styles/login';
 
+const Tab = createMaterialTopTabNavigator();
+
 const LogIn = () => {
+  const { width, height } = useWindowDimensions();
+
   return (
-    <View className={styles.container}>
+    <View 
+      style={{
+        width: width,
+        height: height
+      }} 
+      className={styles.container}
+    >
       <View className={styles.contentWrapper}>
-        <Text>LogIn</Text>
+        <View className={styles.welcomeWrapper}>
+          <Text className='text-2xl font-bold'>Welcome!</Text>
+          <Text className='mt-2 text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+        </View>
+      </View>
+      <View className='flex-1 m-2 bg-gray-50 rounded-md'>
+        <Tab.Navigator className='rounded-md'>
+          <Tab.Screen 
+            name='Log In'
+            children={() => <LogInTab />}
+          />
+          <Tab.Screen 
+            name='Sign Up'
+            children={() => <SignUpTab />}
+          />
+        </Tab.Navigator>
       </View>
     </View>
   )
 }
 
-export default LogIn
+export default LogIn;

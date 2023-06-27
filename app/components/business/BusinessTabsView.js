@@ -1,5 +1,5 @@
-import { View, Text, StatusBar, useWindowDimensions } from 'react-native';
-import React, { ReactElement, useState } from 'react';
+import { View, useWindowDimensions } from 'react-native';
+import React from 'react';
 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
