@@ -1,7 +1,9 @@
-import { View, Text, SafeAreaView, Image } from 'react-native';
+import { View, Text, SafeAreaView, useWindowDimensions } from 'react-native';
 import React, { useContext } from 'react';
 
 import { DrawerItemList, DrawerItem } from '@react-navigation/drawer';
+
+import { HomeIcon } from 'react-native-heroicons/solid';
 
 import styles from '../../styles/sidebarmenu';
 import { UserContext } from '../../context/UserContext';
@@ -13,6 +15,8 @@ const SideBarMenu = (props) => {
     profileImg,
     isLoggedIn,
   } = useContext(UserContext);
+
+  const { width } = useWindowDimensions();
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -29,7 +33,9 @@ const SideBarMenu = (props) => {
           }
         </View>
         <View className={styles.drawerItemsContainer}>
-          <DrawerItemList {...props} />
+          <View>
+            <DrawerItemList {...props} />
+          </View>
         </View>
       </View>
     </SafeAreaView>

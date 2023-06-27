@@ -13,7 +13,7 @@ import LogInScreen from './LogInScreen';
 
 import { 
   HomeIcon,
-  EnvelopeIcon,
+  AtSymbolIcon,
   HeartIcon,
   UserCircleIcon,
 } from 'react-native-heroicons/solid';
@@ -75,7 +75,7 @@ const MainScreen = () => {
       }
       <Drawer.Screen 
         name='ContactUsScreen'
-        options={drawerScreenOptions('Contact Us', EnvelopeIcon)} 
+        options={drawerScreenOptions('Contact Us', AtSymbolIcon)} 
         children={(props)=> <ContactUsScreen {...props} />} 
       />
     </Drawer.Navigator>

@@ -6,7 +6,7 @@ import LogIn from '../components/login/LogIn'
 
 const LogInScreen = () => {
   return (
-    <TScreen showHeader={false}>
+    <TScreen>
       <LogIn />
     </TScreen>
   )

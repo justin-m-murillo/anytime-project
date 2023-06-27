@@ -1,4 +1,12 @@
-import { View, Text, TextInput, ScrollView, TouchableOpacity, Alert } from 'react-native';
+import { 
+  View, 
+  Text, 
+  TextInput, 
+  ScrollView, 
+  TouchableOpacity, 
+  Alert, 
+  useWindowDimensions
+} from 'react-native';
 import React from 'react';
 import { Formik } from 'formik';
 
@@ -7,6 +15,7 @@ import { styles } from '../../styles/login';
 import { SignUpSchema } from '../../formik/schemas';
 
 const SignUpTab = () => {
+  const { height } = useWindowDimensions();
   return (
     <Formik
       initialValues={{
@@ -22,7 +31,7 @@ const SignUpTab = () => {
     >
       {({values, errors, touched, handleChange, setFieldTouched, isValid, handleSubmit}) => (
         <ScrollView>
-          <View className='p-2 bg-white' style={{ paddingBottom: 300 }}>
+          <View className='p-2 bg-white' style={{ height: height }}>
 
             <View className='flex-row'>
               <View className='w-44 mr-1'>

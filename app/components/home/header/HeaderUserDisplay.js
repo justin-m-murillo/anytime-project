@@ -1,6 +1,6 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
+import React, { useContext } from 'react';
 
 import GuestIcon from '../../../../assets/guest-icon.jpg';
 
@@ -8,27 +8,12 @@ import styles from '../../../styles/header';
 
 const GUEST_ICON = Image.resolveAssetSource(GuestIcon).uri;
 
-const LogInLink = ({ navigation }) => {
-  return (
-    <TouchableOpacity
-      onPress={() => (
-        navigation.navigate('LogInScreen')
-      )}
-    >
-      <Text className='underline underline-offset-4'>Log In or Sign Up</Text>
-    </TouchableOpacity>
-  )
-}
-
-const HeaderUserDisplay = ({ 
+const HeaderUserDisplay = ({
   userName, 
   location, 
   profileImg,
   isLoggedIn, 
 }) => {
-
-  const navigation = useNavigation();
-
   return (
     <View className='flex-row'>
       {
@@ -49,7 +34,11 @@ const HeaderUserDisplay = ({
       }
       <View className='px-2'>
         <Text className={styles.userName}>
-          {isLoggedIn ? userName : <LogInLink navigation={navigation} />}
+          {
+            isLoggedIn 
+            ? userName 
+            : 'Hello, Guest!'
+          }
         </Text>
         <TouchableOpacity>
           <Text className={styles.location}>{location}</Text>
