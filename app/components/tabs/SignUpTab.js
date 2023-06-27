@@ -12,14 +12,14 @@ const SignUpSchema = Yup.object().shape({
   lastName: Yup.string()
     .min(2, 'Minimum of two characters required')
     .required('Please enter your last name'),
+  email: Yup.string()
+    .email('Invalid Email entered')
+    .required('Please enter your email address'),
   phoneNo: Yup.string()
     .min(10, 'Please enter your 10-digit phone number (area code incl.)')
     .max(10, 'Please enter your 10-digit phone number (area code incl.)')
     .matches(/^[0-9]+$/, 'Must contain only digits')
     .required('Please enter your 10-digit phone number (area code incl.)'),
-  email: Yup.string()
-    .email('Invalid Email entered')
-    .required('Please enter your email address'),
   password: Yup.string()
     .min(8)
     .required('Please enter a password for this account')
@@ -39,8 +39,8 @@ const SignUpTab = () => {
       initialValues={{
         firstName: '',
         lastName: '',
-        phoneNo: '',
         email: '',
+        phoneNo: '',
         password: '',
         confirmPW: '',
       }}
@@ -87,24 +87,7 @@ const SignUpTab = () => {
             </View>
 
             <View className='flex-row'>
-              <View className='w-36 mr-1'>
-                <Text className='py-2 px-1 text-lg font-bold'>Phone No.</Text>
-                <View className='bg-gray-100 align-middle'>
-                  {/* PHONE NO. TEXTINPUT */}
-                  <TextInput 
-                    className='h-10 p-2' 
-                    placeholder='Phone No.'
-                    keyboardType='phone-pad'
-                    value={values.phoneNo}
-                    onChangeText={handleChange('phoneNo')}
-                    onBlur={() => setFieldTouched('phoneNo')}
-                  />
-                  {touched.phoneNo && errors.phoneNo && (
-                    <Text className={styles.errorMsg}>{errors.phoneNo}</Text>
-                  )}
-                </View>
-              </View>
-              <View className='w-52'>
+              <View className='w-52 mr-1'>
                 <Text className='py-2 px-1 text-lg font-bold'>Email</Text>
                 <View className='bg-gray-100 align-middle'>
                   {/* EMAIL TEXTINPUT */}
@@ -118,6 +101,23 @@ const SignUpTab = () => {
                   />
                   {touched.email && errors.email && (
                     <Text className={styles.errorMsg}>{errors.email}</Text>
+                  )}
+                </View>
+              </View>
+              <View className='w-36'>
+                <Text className='py-2 px-1 text-lg font-bold'>Phone No.</Text>
+                <View className='bg-gray-100 align-middle'>
+                  {/* PHONE NO. TEXTINPUT */}
+                  <TextInput 
+                    className='h-10 p-2' 
+                    placeholder='Phone No.'
+                    keyboardType='phone-pad'
+                    value={values.phoneNo}
+                    onChangeText={handleChange('phoneNo')}
+                    onBlur={() => setFieldTouched('phoneNo')}
+                  />
+                  {touched.phoneNo && errors.phoneNo && (
+                    <Text className={styles.errorMsg}>{errors.phoneNo}</Text>
                   )}
                 </View>
               </View>
