@@ -6,7 +6,7 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import LogInTab from '../tabs/LogInTab';
 import SignUpTab from '../tabs/SignUpTab';
 
-import styles from '../../styles/login';
+import { styles } from '../../styles/login';
 
 const Tab = createMaterialTopTabNavigator();
 
