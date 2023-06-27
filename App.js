@@ -6,9 +6,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import MainScreen from './app/screens/MainScreen';
 import BusinessScreen from './app/screens/BusinessScreen';
 
-import { StackNavContext } from './app/context/StackNavContext';
-import LogInScreen from './app/screens/LogInScreen';
-
 export default function App() {
   const Stack = createStackNavigator();
 
