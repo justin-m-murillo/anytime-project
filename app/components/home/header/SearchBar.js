@@ -7,11 +7,6 @@ import {
 
 import styles from '../../../styles/searchbar';
 
-const DismissKeyboard = ({ children }) => (
-  <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}> 
-    {children}
-  </TouchableWithoutFeedback>
-);
 
 const SearchBar = () => {
   const [searchInput, setSearchInput] = useState('');
@@ -20,7 +15,6 @@ const SearchBar = () => {
     <View className={styles.searchContainer}>
       <View className={styles.searchView}>
         <MagnifyingGlassIcon style={styles.magnifyingGlassIcon} />
-        <DismissKeyboard>
           <TextInput
             className='w-72 mx-1'
             maxLength={36}
@@ -28,7 +22,6 @@ const SearchBar = () => {
             onChangeText={newInput => setSearchInput(newInput)}
             value={searchInput}
           />
-        </DismissKeyboard>
       </View>
     </View>
   )
