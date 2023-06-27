@@ -15,7 +15,7 @@ import { useKeyboard } from '@react-native-community/hooks';
 import styles from '../../../styles/header';
 import { Bars3CenterLeftIcon } from 'react-native-heroicons/solid';
 
-import HeaderUserDisplay from '../../../subcomponents/HeaderUserDisplay';
+import HeaderUserDisplay from './HeaderUserDisplay';
 
 const HeaderUser = () => {
   const { width } = useWindowDimensions();

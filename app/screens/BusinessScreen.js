@@ -3,16 +3,16 @@ import React from 'react';
 
 import { StatusBar } from 'expo-status-bar';
 
+import TScreen from '../templates/TScreen';
 import BusinessProfile from '../components/business/BusinessProfile';
 
 const BusinessScreen = ({ route, userData }) => {
   const routeData = route.params;
 
   return (
-    <View>
-      <StatusBar style="light" />
+    <TScreen statusBarStyle={'light'} showSafeArea={false}>
       <BusinessProfile data={routeData} />
-    </View>
+    </TScreen>
   )
 }
 

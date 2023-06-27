@@ -5,7 +5,7 @@ import { DrawerItemList, } from '@react-navigation/drawer';
 
 import styles from '../../styles/sidebarmenu';
 import { UserContext } from '../../context/UserContext';
-import SideBarUserDisplay from '../../subcomponents/SideBarUserDisplay';
+import SideBarUserDisplay from './SideBarUserDisplay';
 
 const SideBarMenu = (props) => {
   const {

@@ -15,25 +15,14 @@ const Home = () => {
   const [features, setFeatures] = useState([1, 2, 3]);
 
   return (
-      <View>
-        <StatusBar style='auto' />
-        <SafeAreaView className={styles.safeAreaView}>
-          <View>
-            {/* Header */}
-            <Header  />
-          </View>
-
-          <View className='bg-gray-100'>
-            <ScrollView showsVerticalScrollIndicator={false}>
-              <View style={{ paddingBottom: 440 }}>
-                {/* Body */}
-                <Body features={features} />
-              </View>
-            </ScrollView>
-          </View>
-
-        </SafeAreaView>
-      </View>
+    <View className='bg-gray-100'>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{ paddingBottom: 440 }}>
+          {/* Body */}
+          <Body features={features} />
+        </View>
+      </ScrollView>
+    </View>
   )
 }
 

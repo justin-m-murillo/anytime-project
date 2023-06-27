@@ -2,9 +2,9 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 
-import GuestIcon from '../../assets/guest-icon.jpg';
+import GuestIcon from '../../../../assets/guest-icon.jpg';
 
-import styles from '../styles/header';
+import styles from '../../../styles/header';
 
 const GUEST_ICON = Image.resolveAssetSource(GuestIcon).uri;
 

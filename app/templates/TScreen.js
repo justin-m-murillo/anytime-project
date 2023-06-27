@@ -4,16 +4,39 @@ import React from 'react'
 import { StatusBar } from 'expo-status-bar';
 
 import styles from '../styles/mainstylesheet';
+import Header from '../components/home/header/Header';
 
-const TScreen = ({ children }) => {
+const TScreen = (props) => {
+  const {
+    statusBarStyle,
+    showSafeArea,
+    showHeader,
+    children
+  } = props;
+
   return (
     <View>
-      <StatusBar style='auto' />
-      <SafeAreaView className={styles.safeAreaView}>
-        {children}
-      </SafeAreaView>
+      <StatusBar style={statusBarStyle} />
+      {
+        showSafeArea
+        ?
+          <SafeAreaView className={styles.safeAreaView}>
+            { showHeader ? <Header /> : null }
+            {children}
+          </SafeAreaView>
+        : 
+          <>
+            {children}
+          </>
+      }
     </View>
   )
 }
 
-export default TScreen
+TScreen.defaultProps = {
+  statusBarStyle: 'auto',
+  showHeader: true,
+  showSafeArea: true
+}
+
+export default TScreen;

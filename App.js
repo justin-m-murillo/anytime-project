@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import HomeScreen from './app/screens/HomeScreen';
+import MainScreen from './app/screens/MainScreen';
 import BusinessScreen from './app/screens/BusinessScreen';
 
 import { UserContext } from './app/context/UserContext';
@@ -17,12 +17,12 @@ export default function App() {
     <UserContext.Provider value={user}>
       <NavigationContainer>
         <Stack.Navigator 
-          initialRouteName='HomeScreen'
+          initialRouteName='MainScreen'
           screenOptions={{ headerShown: false, }}
         >
               <Stack.Screen 
-                name='HomeScreen'
-                children={(props) => <HomeScreen {...props} />}
+                name='MainScreen'
+                children={(props) => <MainScreen {...props} />}
               />
               <Stack.Screen 
                 name='BusinessScreen'

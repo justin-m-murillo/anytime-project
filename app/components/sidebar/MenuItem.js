@@ -1,7 +1,7 @@
 import { View, Text, Image } from 'react-native';
 import React, { useState } from 'react';
 
-import styles from '../styles/mainstylesheet';
+import styles from '../../styles/mainstylesheet';
 
 const MenuItem = ({ dealTitle, dealTimes, dealItems }) => {
   return (

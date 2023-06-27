@@ -1,7 +1,7 @@
 import { View, FlatList } from 'react-native';
 import React from 'react';
 
-import MenuItem from '../../subcomponents/MenuItem';
+import MenuItem from '../sidebar/MenuItem';
 
 const MenuTab = ({ deals }) => {
 
