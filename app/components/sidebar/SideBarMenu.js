@@ -1,7 +1,7 @@
 import { View, Text, SafeAreaView, Image } from 'react-native';
 import React, { useContext } from 'react';
 
-import { DrawerItemList, } from '@react-navigation/drawer';
+import { DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 
 import styles from '../../styles/sidebarmenu';
 import { UserContext } from '../../context/UserContext';

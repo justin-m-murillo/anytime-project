@@ -5,7 +5,7 @@ const styles = {
   goBackIconStyle: {
     color: 'white'
   },
-  goBackText: 'text-white top-1',
+  goBackText: 'font-bold text-white top-1',
   businessNameContainer: 'px-1 absolute left-1 bottom-1',
   businessName: 'text-3xl font-bold text-white',
 }

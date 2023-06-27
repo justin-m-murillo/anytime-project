@@ -1,37 +1,10 @@
 import { View, Text, TextInput, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import React from 'react';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
 
 import { styles } from '../../styles/login';
 
-const SignUpSchema = Yup.object().shape({
-  firstName: Yup.string()
-    .min(2, 'Minimum of two characters required')
-    .required('Please enter your first name'),
-  lastName: Yup.string()
-    .min(2, 'Minimum of two characters required')
-    .required('Please enter your last name'),
-  email: Yup.string()
-    .email('Invalid Email entered')
-    .required('Please enter your email address'),
-  phoneNo: Yup.string()
-    .min(10, 'Please enter your 10-digit phone number (area code incl.)')
-    .max(10, 'Please enter your 10-digit phone number (area code incl.)')
-    .matches(/^[0-9]+$/, 'Must contain only digits')
-    .required('Please enter your 10-digit phone number (area code incl.)'),
-  password: Yup.string()
-    .min(8)
-    .required('Please enter a password for this account')
-    .matches(
-      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
-      'Must contain min. 8 characters, one uppercase letter, one lowercase letter, one number, and one special character.'  
-    ),
-  confirmPW: Yup.string()
-   .min(8, 'Confirm password must be 8 characters long')
-   .oneOf([Yup.ref('password')], 'Passwords do not match.')
-   .required('Confirm password is required') 
-});
+import { SignUpSchema } from '../../formik/schemas';
 
 const SignUpTab = () => {
   return (
@@ -157,13 +130,20 @@ const SignUpTab = () => {
               )}
             </View>
 
-            <View className='items-center my-10'>
+            <View className='flex-row items-center my-10'>
               <TouchableOpacity 
-                className={isValid ? styles.buttonValid : styles.buttonInvalid}
+                className={isValid ? styles.btnValid : styles.btnInvalid}
                 onPress={handleSubmit}
                 disabled={!isValid}
               >
                 <Text>Submit</Text>
+              </TouchableOpacity>
+              <TouchableOpacity 
+                className={styles.btnGoBack}
+                onPress={handleSubmit}
+                disabled={!isValid}
+              >
+                <Text>Go Back</Text>
               </TouchableOpacity>
             </View>
           </View>

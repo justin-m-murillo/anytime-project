@@ -6,15 +6,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import MainScreen from './app/screens/MainScreen';
 import BusinessScreen from './app/screens/BusinessScreen';
 
-import { UserContext } from './app/context/UserContext';
-
-const Stack = createStackNavigator();
+import { StackNavContext } from './app/context/StackNavContext';
 
 export default function App() {
-  const user = useContext(UserContext);
+  const Stack = createStackNavigator();
 
   return (
-    <UserContext.Provider value={user}>
+    <StackNavContext.Provider value={Stack}>
       <NavigationContainer>
         <Stack.Navigator 
           initialRouteName='MainScreen'
@@ -30,6 +28,6 @@ export default function App() {
               />
         </Stack.Navigator>
       </NavigationContainer>
-    </UserContext.Provider>
+    </StackNavContext.Provider>
   );
 }
