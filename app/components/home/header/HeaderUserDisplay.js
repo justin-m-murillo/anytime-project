@@ -37,7 +37,7 @@ const HeaderUserDisplay = ({
           {
             isLoggedIn 
             ? userName 
-            : 'Hello, Guest!'
+            : 'Hello, friend!'
           }
         </Text>
         <TouchableOpacity>
