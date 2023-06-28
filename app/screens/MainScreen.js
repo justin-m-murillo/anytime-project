@@ -21,7 +21,7 @@ import {
 import Header from '../components/home/header/Header';
 
 
-const Drawer = createDrawerNavigator();
+
 
 const MainScreen = () => {
   const { colors } = useTheme();
@@ -29,6 +29,8 @@ const MainScreen = () => {
   const iconInactiveColor = '#d1d5db'; {/* Tailwind CSS: text-gray-300 */}
 
   const { isLoggedIn } = useContext(UserContext);
+  
+  const Drawer = createDrawerNavigator();
 
   const drawerScreenOptions = (label, Icon, unmountOnBlur=false) => (
     {

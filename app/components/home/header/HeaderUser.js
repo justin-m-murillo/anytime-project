@@ -7,6 +7,7 @@ import {
   Keyboard 
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { DrawerActions } from '@react-navigation/native';
 import React, { useContext } from 'react';
 
 import { UserContext } from '../../../context/UserContext';
@@ -33,7 +34,7 @@ const HeaderUser = () => {
     if (keyboard.keyboardShown) {
       Keyboard.dismiss();
     }
-    navigation.toggleDrawer();
+    navigation.dispatch(DrawerActions.toggleDrawer());
   }
 
   return (
