@@ -16,12 +16,7 @@ const HomeScreen = () => {
 
   return (
     <View className='bg-gray-100'>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{ paddingBottom: 440 }}>
-          {/* Body */}
-          <Body features={features} />
-        </View>
-      </ScrollView>
+      <Body features={features} />
     </View>
   )
 }
