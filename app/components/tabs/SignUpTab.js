@@ -36,7 +36,7 @@ const SignUpTab = () => {
             <View className='flex-row'>
               <View className='w-44 mr-1'>
                 <Text className='py-2 px-1 text-lg font-bold'>First Name</Text>
-                <View className='bg-gray-100 align-middle'>
+                <View className={styles.textInputWrapper}>
                   {/* FIRST NAME TEXTINPUT */}
                   <TextInput 
                     className='h-10 p-2' 
@@ -52,7 +52,7 @@ const SignUpTab = () => {
               </View>
               <View className='w-44'>
                 <Text className='py-2 px-1 text-lg font-bold'>Last Name</Text>
-                <View className='bg-gray-100 align-middle'>
+                <View className={styles.textInputWrapper}>
                   {/* LAST NAME TEXTINPUT */}
                   <TextInput 
                     className='h-10 p-2' 
@@ -71,7 +71,7 @@ const SignUpTab = () => {
             <View className='flex-row'>
               <View className='w-52 mr-1'>
                 <Text className='py-2 px-1 text-lg font-bold'>Email</Text>
-                <View className='bg-gray-100 align-middle'>
+                <View className={styles.textInputWrapper}>
                   {/* EMAIL TEXTINPUT */}
                   <TextInput 
                     className='h-10 p-2' 
@@ -88,7 +88,7 @@ const SignUpTab = () => {
               </View>
               <View className='w-36'>
                 <Text className='py-2 px-1 text-lg font-bold'>Phone No.</Text>
-                <View className='bg-gray-100 align-middle'>
+                <View className={styles.textInputWrapper}>
                   {/* PHONE NO. TEXTINPUT */}
                   <TextInput 
                     className='h-10 p-2' 
@@ -106,7 +106,7 @@ const SignUpTab = () => {
             </View>
 
             <Text className='py-2 px-1 text-lg font-bold'>Password</Text>
-            <View className='bg-gray-100 align-middle'>
+            <View className={styles.textInputWrapper}>
               {/* PASSWORD TEXTINPUT */}
               <TextInput 
                 className='h-10 p-2' 
@@ -123,7 +123,7 @@ const SignUpTab = () => {
             </View>
 
             <Text className='py-2 px-1 text-lg font-bold'>Confirm Password</Text>
-            <View className='bg-gray-100 align-middle'>
+            <View className={styles.textInputWrapper}>
               {/* CONFIRM PASSWORD TEXTINPUT */}
               <TextInput 
                 className='h-10 p-2' 
