@@ -18,6 +18,7 @@ import {
   HeartIcon,
   UserCircleIcon,
 } from 'react-native-heroicons/solid';
+import Header from '../components/home/header/Header';
 
 
 const Drawer = createDrawerNavigator();
@@ -44,6 +45,7 @@ const MainScreen = () => {
 
   return (
     <SafeAreaProvider>
+      <Header />
       <Drawer.Navigator
         initialRouteName='HomeScreen'
         screenOptions={{ 

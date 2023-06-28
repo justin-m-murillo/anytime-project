@@ -5,17 +5,20 @@ import DismissKeyboard from '../../../utils/dismisskeyboard';
 
 import HeaderUser from './HeaderUser';
 import SearchBar from './SearchBar';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Header = () => {
   return (
-    <DismissKeyboard>
-      <View>
-        {/* User Profile Pic, Username, and Current Location */}
-        <HeaderUser />
-        {/* Search Bar */}
-        <SearchBar />
-      </View>
-    </DismissKeyboard>
+    <SafeAreaView className='bg-white h-1/5'>
+      <DismissKeyboard>
+        <View>
+          {/* User Profile Pic, Username, and Current Location */}
+          <HeaderUser />
+          {/* Search Bar */}
+          <SearchBar />
+        </View>
+      </DismissKeyboard>
+    </SafeAreaView>
   )
 }
 

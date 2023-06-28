@@ -21,10 +21,10 @@ const TScreen = (props) => {
       {
         showSafeArea
         ?
-          <SafeAreaView className={styles.safeAreaView}>
-            { showHeader ? <Header /> : null }
+          <View>
+            {/* { showHeader ? <Header /> : null } */}
             {children}
-          </SafeAreaView>
+          </View>
         : 
           <>
             {children}
