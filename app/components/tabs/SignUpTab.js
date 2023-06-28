@@ -76,7 +76,7 @@ const SignUpTab = () => {
                   <TextInput 
                     className='h-10 p-2' 
                     placeholder='Email'
-                    autoCapitalize={false}
+                    autoCapitalize='none'
                     value={values.email}
                     onChangeText={handleChange('email')}
                     onBlur={() => setFieldTouched('email')}
@@ -111,7 +111,7 @@ const SignUpTab = () => {
               <TextInput 
                 className='h-10 p-2' 
                 placeholder='Password'
-                autoCapitalize={false}
+                autoCapitalize='none'
                 secureTextEntry
                 value={values.password}
                 onChangeText={handleChange('password')}
@@ -128,7 +128,7 @@ const SignUpTab = () => {
               <TextInput 
                 className='h-10 p-2' 
                 placeholder='Confirm Password'
-                autoCapitalize={false}
+                autoCapitalize='none'
                 secureTextEntry
                 value={values.confirmPW}
                 onChangeText={handleChange('confirmPW')}
@@ -146,13 +146,6 @@ const SignUpTab = () => {
                 disabled={!isValid}
               >
                 <Text>Submit</Text>
-              </TouchableOpacity>
-              <TouchableOpacity 
-                className={styles.btnGoBack}
-                onPress={handleSubmit}
-                disabled={!isValid}
-              >
-                <Text>Go Back</Text>
               </TouchableOpacity>
             </View>
           </View>

@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
 
 import { useTheme } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import SideBarMenu from '../components/sidebar/SideBarMenu';
@@ -28,7 +29,7 @@ const MainScreen = () => {
 
   const { isLoggedIn } = useContext(UserContext);
 
-  const drawerScreenOptions = (label, Icon) => (
+  const drawerScreenOptions = (label, Icon, unmountOnBlur=false) => (
     {
       drawerLabel: label,
       drawerIcon: ({ focused }) => (
@@ -36,49 +37,52 @@ const MainScreen = () => {
           size={20}
           color={ focused ? iconActiveColor : iconInactiveColor }
         />
-      )
+      ),
+      unmountOnBlur: unmountOnBlur,
     }
   );
 
   return (
-    <Drawer.Navigator
-      initialRouteName='HomeScreen'
-      screenOptions={{ 
-        headerShown: false, 
-        swipeEdgeWidth: 0,
-        drawerPosition: 'right',
-      }}
-      drawerContent={(props) => <SideBarMenu {...props} /> /* SideBar Menu */ }
-    >
-      {
-        !isLoggedIn ? 
-          <Drawer.Screen 
-            name='LogInScreen'
-            options={drawerScreenOptions('Log In', UserCircleIcon)}
-            children={(props) => <LogInScreen {...props} />}
-          />
-          : null
-      }
-      <Drawer.Screen 
-        name='HomeScreen' 
-        options={drawerScreenOptions('Home', HomeIcon)}
-        children={(props) => <HomeScreen {...props} />} 
-      />
-      {
-        isLoggedIn ? 
-          <Drawer.Screen 
-            name='FavoritesScreen'
-            options={drawerScreenOptions('Favorites', HeartIcon)}
-            children={(props) => <FavoritesScreen {...props} />}
-          />
-          : null
-      }
-      <Drawer.Screen 
-        name='ContactUsScreen'
-        options={drawerScreenOptions('Contact Us', AtSymbolIcon)} 
-        children={(props)=> <ContactUsScreen {...props} />} 
-      />
-    </Drawer.Navigator>
+    <SafeAreaProvider>
+      <Drawer.Navigator
+        initialRouteName='HomeScreen'
+        screenOptions={{ 
+          headerShown: false, 
+          swipeEdgeWidth: 0,
+          drawerPosition: 'right',
+        }}
+        drawerContent={(props) => <SideBarMenu {...props} /> /* SideBar Menu */ }
+      >
+        {
+          !isLoggedIn ? 
+            <Drawer.Screen 
+              name='LogInScreen'
+              options={drawerScreenOptions('Log In', UserCircleIcon)}
+              children={(props) => <LogInScreen {...props} />}
+            />
+            : null
+        }
+        <Drawer.Screen 
+          name='HomeScreen' 
+          options={drawerScreenOptions('Home', HomeIcon)}
+          children={(props) => <HomeScreen {...props} />} 
+        />
+        {
+          isLoggedIn ? 
+            <Drawer.Screen 
+              name='FavoritesScreen'
+              options={drawerScreenOptions('Favorites', HeartIcon)}
+              children={(props) => <FavoritesScreen {...props} />}
+            />
+            : null
+        }
+        <Drawer.Screen 
+          name='ContactUsScreen'
+          options={drawerScreenOptions('Contact Us', AtSymbolIcon)} 
+          children={(props)=> <ContactUsScreen {...props} />} 
+        />
+      </Drawer.Navigator>
+    </SafeAreaProvider>
   )
 }
 

@@ -7,7 +7,6 @@ import HeaderUser from './HeaderUser';
 import SearchBar from './SearchBar';
 
 const Header = () => {
-
   return (
     <DismissKeyboard>
       <View>

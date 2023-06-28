@@ -1,4 +1,5 @@
 import { View, Text, useWindowDimensions } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import React from 'react';
 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -24,11 +25,14 @@ const LogIn = () => {
       <View className={styles.contentWrapper}>
         <View className={styles.welcomeWrapper}>
           <Text className='text-2xl font-bold'>Welcome!</Text>
-          <Text className='mt-2 text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+          <Text className='my-2 text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
         </View>
       </View>
-      <View className='flex-1 m-2 bg-gray-50 rounded-md'>
-        <Tab.Navigator className='rounded-md'>
+      <View className='flex-1 mx-2 bg-gray-50 rounded-md'>
+        <Tab.Navigator 
+          className='rounded-md'
+          initialRouteName='Log In'  
+        >
           <Tab.Screen 
             name='Log In'
             children={() => <LogInTab />}
