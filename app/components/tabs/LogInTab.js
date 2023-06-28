@@ -12,7 +12,7 @@ const LogInTab = () => {
   return (
     <View className='p-2 bg-white' style={{ width: '100%', height: '100%' }}>
       <Text className='p-2 text-lg font-bold'>Email</Text>
-      <View className='bg-gray-50 align-middle'>
+      <View className={styles.textInputWrapper}>
         <TextInput 
           className='h-10 p-2' 
           placeholder='Email' 
@@ -20,7 +20,7 @@ const LogInTab = () => {
         />
       </View>
       <Text className='p-2 text-lg font-bold'>Password</Text>
-      <View className='bg-gray-50 align-middle'>
+      <View className={styles.textInputWrapper}>
         <TextInput 
           className='h-10 p-2' 
           placeholder='Password'

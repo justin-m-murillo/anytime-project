@@ -15,7 +15,7 @@ const FeaturedItem = ({
     <View style={styles.shadow} className={styles.container}>
       <TouchableOpacity
         onPress={() => navigation.navigate(
-          'BusinessScreen',
+          'BusinessProfile',
           {
             imgUrl: imgUrl,
             businessName: businessName,

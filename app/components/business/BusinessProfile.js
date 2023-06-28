@@ -6,6 +6,7 @@ import {
   ScrollView, 
   TouchableOpacity 
 } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -21,9 +22,10 @@ import BusinessTabsView from './BusinessTabsView';
 
 const Tab = createMaterialTopTabNavigator();
 
-const BusinessProfile = ({ data }) => {
+const BusinessProfile = ({ route }) => {
   const navigation = useNavigation();
   const { width, height } = useWindowDimensions();
+  const data = route.params;
   const { imgUrl, businessName, distance } = data;
   const sampleImages = [
     { id: 1, img: imgUrl,  },
@@ -39,6 +41,7 @@ const BusinessProfile = ({ data }) => {
 
   return (
     <View>
+      <StatusBar style='light' />
       <View className='relative'>
         <ScrollView
           horizontal

@@ -7,10 +7,10 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import SideBarMenu from '../components/sidebar/SideBarMenu';
-import HomeScreen from './HomeScreen';
-import ContactUsScreen from './ContactUsScreen';
-import FavoritesScreen from './FavoritesScreen';
-import LogInScreen from './LogInScreen';
+import HomeScreen from '../screens/HomeScreen';
+import ContactUsScreen from '../screens/ContactUsScreen';
+import FavoritesScreen from '../screens/FavoritesScreen';
+import LogInScreen from '../screens/LogInScreen';
 
 import { 
   HomeIcon,
@@ -18,12 +18,10 @@ import {
   HeartIcon,
   UserCircleIcon,
 } from 'react-native-heroicons/solid';
-import Header from '../components/home/header/Header';
+import TScreen from '../templates/TScreen';
 
 
-
-
-const MainScreen = () => {
+const MainDrawerNavigator = () => {
   const { colors } = useTheme();
   const iconActiveColor = colors.primary;
   const iconInactiveColor = '#d1d5db'; {/* Tailwind CSS: text-gray-300 */}
@@ -47,7 +45,6 @@ const MainScreen = () => {
 
   return (
     <SafeAreaProvider>
-      <Header />
       <Drawer.Navigator
         initialRouteName='HomeScreen'
         screenOptions={{ 
@@ -62,32 +59,48 @@ const MainScreen = () => {
             <Drawer.Screen 
               name='LogInScreen'
               options={drawerScreenOptions('Log In', UserCircleIcon)}
-              children={(props) => <LogInScreen {...props} />}
+              children={(props) => (
+                <TScreen>
+                  <LogInScreen {...props}/>
+                </TScreen>
+              )}
             />
             : null
         }
         <Drawer.Screen 
           name='HomeScreen' 
           options={drawerScreenOptions('Home', HomeIcon)}
-          children={(props) => <HomeScreen {...props} />} 
+          children={(props) => (
+            <TScreen>
+              <HomeScreen {...props}/>
+            </TScreen>
+          )} 
         />
         {
           isLoggedIn ? 
             <Drawer.Screen 
               name='FavoritesScreen'
               options={drawerScreenOptions('Favorites', HeartIcon)}
-              children={(props) => <FavoritesScreen {...props} />}
+              children={(props) => ( 
+                <TScreen>
+                  <FavoritesScreen {...props}/>
+                </TScreen>
+              )}
             />
             : null
         }
         <Drawer.Screen 
           name='ContactUsScreen'
           options={drawerScreenOptions('Contact Us', AtSymbolIcon)} 
-          children={(props)=> <ContactUsScreen {...props} />} 
+          children={(props)=> (
+            <TScreen>
+              <ContactUsScreen {...props}/>
+            </TScreen>
+          )} 
         />
       </Drawer.Navigator>
     </SafeAreaProvider>
   )
 }
 
-export default MainScreen;
+export default MainDrawerNavigator;

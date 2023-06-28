@@ -12,7 +12,7 @@ const GalleryItem = ({ data }) => {
     <TouchableOpacity 
       className={styles.galleryItemWrapper}
       onPress={() => navigation.navigate(
-        'BusinessScreen',
+        'BusinessProfile',
         {
           imgUrl: imgUrl,
           businessName: businessName,
