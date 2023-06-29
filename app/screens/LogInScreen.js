@@ -28,7 +28,7 @@ const LogIn = () => {
           <Text className='my-2 text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
         </View>
       </View>
-      <View className='flex-1 mx-2 bg-gray-50 rounded-md'>
+      <View className='flex-1 mx-2 bg-gray-50 rounded-lg'>
         <Tab.Navigator 
           className='rounded-md'
           initialRouteName='Log In'  

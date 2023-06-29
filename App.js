@@ -12,7 +12,7 @@ export default function App() {
     userName: 'anytime.username',
     location: 'San Jose • CA',
     profileImg: sampleImgGenerator(720),
-    isLoggedIn: true,
+    isLoggedIn: false,
   }
 
   return (
