@@ -24,11 +24,9 @@ const HeaderUserDisplay = ({
             }}
             className={styles.profileImage}
           />
-        : 
+        :
           <Image
-            source={{
-              uri: GUEST_ICON
-            }}
+            source={require('../../../../assets/guest-icon.jpg')}
             className={styles.profileImage}
           />
       }

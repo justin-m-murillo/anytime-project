@@ -70,6 +70,7 @@ const Body = ({ features }) => {
           </View>
         )}
         keyExtractor={(item, index) => index.toString()}
+        showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 250 }}
       />
     </View>
