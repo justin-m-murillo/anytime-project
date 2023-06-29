@@ -19,6 +19,7 @@ const SearchBar = () => {
             className='w-72 mx-1'
             maxLength={36}
             placeholder='What are you looking for?'
+            clearButtonMode='always'
             onChangeText={newInput => setSearchInput(newInput)}
             value={searchInput}
           />

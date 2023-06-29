@@ -1,7 +1,7 @@
 
 export const styles = {
   container: 'bg-gray-200',
-  contentWrapper: 'm-2 p-1 bg-gray-50 rounded-md',
+  contentWrapper: 'm-2 p-1 bg-gray-50 rounded-lg',
   welcomeWrapper: 'p-2 items-center align-middle',
   textInputWrapper: 'bg-gray-100 align-middle',
   errorMsg: 'bg-white text-red-500',

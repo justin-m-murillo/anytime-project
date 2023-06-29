@@ -9,7 +9,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Header = () => {
   return (
-    <SafeAreaView className='bg-white h-40'>
+    <SafeAreaView className='bg-white max-h-40'>
       <DismissKeyboard>
         <View>
           {/* User Profile Pic, Username, and Current Location */}

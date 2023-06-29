@@ -13,7 +13,7 @@ const styles = {
     elevation: 6,
   }),
   container: 'bg-gray-200 h-full',
-  contentWrapper: 'm-2 p-1 bg-gray-50 rounded-md',
+  contentWrapper: 'm-2 p-1 bg-gray-50 rounded-lg',
   titleWrapper: 'items-center m-2',
   title: 'text-lg font-bold',
   statement: 'm-2',
