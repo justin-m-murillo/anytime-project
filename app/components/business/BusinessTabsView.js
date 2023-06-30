@@ -3,16 +3,16 @@ import React from 'react';
 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
+import MenuTab from '../tabs/MenuTab';
+import GeoLocationTab from '../tabs/GeoLocationTab';
+import InfoTab from '../tabs/InfoTab';
+
 import { 
   BookOpenIcon, 
   MapPinIcon, 
   InformationCircleIcon,
   StarIcon, 
 } from 'react-native-heroicons/outline';
-
-import MenuTab from '../tabs/MenuTab';
-import GeoLocationTab from '../tabs/GeoLocationTab';
-import InfoTab from '../tabs/InfoTab';
 
 const Tab = createMaterialTopTabNavigator();
 

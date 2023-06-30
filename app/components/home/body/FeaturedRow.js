@@ -1,4 +1,5 @@
-import { View, Text, FlatList } from 'react-native'
+import { View, Text } from 'react-native'
+import { FlatList } from 'react-native-gesture-handler'
 import React, { useState, useEffect } from 'react'
 
 import mainStyles from '../../../styles/mainstylesheet'

@@ -1,4 +1,5 @@
-import { View, FlatList, ScrollView, useWindowDimensions } from 'react-native'
+import { View, ScrollView, useWindowDimensions } from 'react-native'
+import { FlatList } from 'react-native-gesture-handler'
 import React, { useState } from 'react'
 
 import styles from '../../../styles/body'

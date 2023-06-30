@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { UserContext } from '../context/UserContext';
 
 import { useTheme } from '@react-navigation/native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import SideBarMenu from '../components/sidebar/SideBarMenu';
@@ -44,7 +44,6 @@ const MainDrawerNavigator = () => {
   );
 
   return (
-    <SafeAreaProvider>
       <Drawer.Navigator
         initialRouteName='HomeScreen'
         screenOptions={{ 
@@ -99,7 +98,6 @@ const MainDrawerNavigator = () => {
           )} 
         />
       </Drawer.Navigator>
-    </SafeAreaProvider>
   )
 }
 
