@@ -1,6 +1,6 @@
 
 const styles = {
-  container: 'mr-1 my-2'
+  container: 'flex-1 mr-1 my-2'
 }
 
 export default styles;

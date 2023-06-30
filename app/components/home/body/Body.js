@@ -57,7 +57,10 @@ const Body = ({ features }) => {
       description={'Check out local deals happening right now'} 
       items={items}
     />,
-    <GalleryRow />,
+    <GalleryRow 
+      title={'Deals starting soon!'}
+      description={'Don\'t miss out on a great time'} 
+    />,
   ]
 
   return (
